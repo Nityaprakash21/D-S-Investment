@@ -1,0 +1,182 @@
+import React, { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Services from './components/Services';
+import Products from './components/ProductsPage';
+import ProductDetailPage from './components/ProductDetailPage';
+import CalculatorsPage from './components/CalculatorsPage';
+import BlogsPage from './components/BlogsPage';
+import BlogDetailPage from './components/BlogDetailPage';
+import ContactPage from './components/ContactPage';
+import CTA from './components/CTA';
+import Resources from './components/Resources';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
+
+const App: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+  const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+  const [selectedBlogId, setSelectedBlogId] = useState<string | null>(null);
+  const [activePage, setActivePage] = useState<'home' | 'calculators' | 'blogs' | 'contact'>('home');
+  const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
+
+  useEffect(() => {
+    const syncFromLocation = () => {
+      const path = window.location.pathname;
+      const hash = window.location.hash.replace('#', '');
+
+      if (path === '/calculators') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('calculators');
+        setActiveAnchor(null);
+        return;
+      }
+
+      if (path === '/blogs') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('blogs');
+        setActiveAnchor(null);
+        return;
+      }
+
+      if (path === '/contact') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('contact');
+        setActiveAnchor(null);
+        return;
+      }
+
+      setActivePage('home');
+      setSelectedBlogId(null);
+      setActiveAnchor(hash || null);
+
+      if (hash) {
+        setTimeout(() => {
+          const section = document.getElementById(hash);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 0);
+      }
+    };
+
+    syncFromLocation();
+    window.addEventListener('popstate', syncFromLocation);
+    return () => window.removeEventListener('popstate', syncFromLocation);
+  }, []);
+
+  useEffect(() => {
+    if (selectedProductId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [selectedProductId]);
+
+  useEffect(() => {
+    if (selectedBlogId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [selectedBlogId]);
+
+  useEffect(() => {
+    if (activePage === 'calculators' || activePage === 'blogs' || activePage === 'contact') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [activePage]);
+
+  const handleNavigate = (target: 'home' | 'calculators' | 'blogs' | 'contact', anchorId?: string) => {
+    if (target === 'calculators') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('calculators');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/calculators');
+      return;
+    }
+
+    if (target === 'blogs') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('blogs');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/blogs');
+      return;
+    }
+
+    if (target === 'contact') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('contact');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/contact');
+      return;
+    }
+
+    setActivePage('home');
+    setSelectedBlogId(null);
+    setActiveAnchor(anchorId || null);
+
+    if (!anchorId) {
+      window.history.pushState(null, '', '/');
+    }
+
+    if (anchorId) {
+      setTimeout(() => {
+        window.history.pushState(null, '', `/#${anchorId}`);
+        const section = document.getElementById(anchorId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
+    }
+  };
+
+  return (
+    <>
+      {loading && <Loader onComplete={() => setLoading(false)} />}
+      <div className={`font-sans antialiased text-gray-800 bg-white min-h-screen flex flex-col`}>
+        <Header onNavigate={handleNavigate} activePage={activePage} activeAnchor={activeAnchor} hasProductDetail={Boolean(selectedProductId)} />
+        <main className="flex-grow">
+          {activePage === 'calculators' ? (
+            <CalculatorsPage />
+          ) : activePage === 'blogs' ? (
+            selectedBlogId ? (
+              <BlogDetailPage
+                blogId={selectedBlogId}
+                onBack={() => setSelectedBlogId(null)}
+              />
+            ) : (
+              <BlogsPage onSelectBlog={setSelectedBlogId} />
+            )
+          ) : activePage === 'contact' ? (
+            <ContactPage />
+          ) : selectedProductId ? (
+            <ProductDetailPage
+              productId={selectedProductId}
+              onBack={() => setSelectedProductId(null)}
+            />
+          ) : (
+            <>
+              <Hero />
+              <Features />
+              <Services />
+              <Products onSelectProduct={setSelectedProductId} />
+              <CTA />
+              <Resources onViewAll={() => handleNavigate('blogs')} />
+              <FAQ />
+            </>
+          )}
+        </main>
+        <ScrollToTop />
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default App;
