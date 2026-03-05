@@ -196,7 +196,7 @@ const App: React.FC = () => {
             <>
               <Hero />
               <Features />
-              <Services />
+              <Services onNavigate={handleNavigate} />
               <Products onSelectProduct={setSelectedProductId} />
               <CTA />
               <Resources onViewAll={() => handleNavigate('blogs')} />
