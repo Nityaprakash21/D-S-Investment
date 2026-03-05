@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { SERVICE_TABS } from '../constants';
 
-const Services: React.FC = () => {
+interface ServicesProps {
+  onNavigate?: (target: 'home' | 'calculators' | 'blogs' | 'contact', anchorId?: string) => void;
+}
+
+const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const handleExpertClick = () => {
+    if (onNavigate) {
+      onNavigate('contact');
+      return;
+    }
+
+    window.location.href = '/contact';
+  };
 
   return (
     <section id="services" className="py-20 bg-premium-gradient text-white overflow-hidden relative">
@@ -28,13 +41,14 @@ const Services: React.FC = () => {
               We deeply value our client relationship and committed to grow and protect your wealth – today and for your next generation.
             </p>
 
-            <a
-              href="/contact"
+            <button
+              type="button"
+              onClick={handleExpertClick}
               className="inline-flex items-center gap-3 border border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-sapient-teal transition-all duration-300 font-semibold tracking-wide group"
             >
               Talk to our Expert
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
           </div>
 
           {/* Right Content - Tabs & Image */}
