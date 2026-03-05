@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const [isQuoteVisible, setIsQuoteVisible] = useState(false);
   const qrRedirectUrl =
     ((import.meta as any).env?.VITE_APP_DOWNLOAD_REDIRECT_URL as string | undefined) ||
-    'http://localhost:3000/download-app';
+    'https://www.dsinvest.in/download-app';
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
