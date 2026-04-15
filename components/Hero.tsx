@@ -4,13 +4,8 @@ import { X, Smartphone, ArrowRight, TrendingUp } from 'lucide-react';
 const Hero: React.FC = () => {
   const [isAppOpen, setIsAppOpen] = useState(false);
   const [isQuoteVisible, setIsQuoteVisible] = useState(false);
-  const defaultQrRedirectUrl =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}/download-app.html`
-      : 'https://play.google.com/store/apps/details?id=com.iw.mint.app&pcampaignid=web_share';
-  const qrRedirectUrl =
-    ((import.meta as any).env?.VITE_APP_DOWNLOAD_REDIRECT_URL as string | undefined) ||
-    defaultQrRedirectUrl;
+  // Always use the production domain for QR code
+  const qrRedirectUrl = 'https://www.dsinvest.in/download-app.html';
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
