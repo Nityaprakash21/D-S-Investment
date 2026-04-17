@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         parallaxRef.current.style.transform = `translateY(${scrolled * 0.4}px) scale(1.1)`;
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     // Initial position check
     handleScroll();
@@ -37,15 +37,15 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-sapient-dark">
       {/* 1. Base Layer with subtle noise texture */}
       <div className="absolute inset-0 bg-[#0B1120]" />
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none z-0"
-        style={{ 
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` 
-        }} 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+        }}
       />
 
       {/* 2. Parallax Image Layer - High-end Architectural/Abstract feel */}
-      <div 
+      <div
         ref={parallaxRef}
         className="absolute inset-0 bg-cover bg-center z-0 opacity-30 mix-blend-overlay will-change-transform"
         style={{
@@ -61,39 +61,39 @@ const Hero: React.FC = () => {
       {/* 4. Sophisticated Gradients for Text Readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] via-[#0B1120]/90 to-transparent z-10" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-[#0B1120]/50 z-10" />
-      
+
       {/* 5. Premium Texture: Diamond Mesh (Faded Diagonally from Top-Left) */}
-      <div 
+      <div
         className="absolute inset-0 z-10 opacity-[0.05] pointer-events-none"
-        style={{ 
-           backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(-45deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
-           backgroundSize: '30px 30px',
-           maskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
-           WebkitMaskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
+        style={{
+          backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(-45deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
+          backgroundSize: '30px 30px',
+          maskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
+          WebkitMaskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
         }}
       />
 
       {/* 6. Premium Texture: Financial Graph Grid (Faded Diagonally from Bottom-Right) */}
-      <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none" 
-           style={{ 
-             backgroundImage: `
+      <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `
                linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
                linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)
-             `, 
-             backgroundSize: '50px 50px',
-             maskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
-             WebkitMaskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
-           }}>
+             `,
+          backgroundSize: '50px 50px',
+          maskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
+          WebkitMaskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
+        }}>
       </div>
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-20 h-full flex items-center">
         <div className="max-w-4xl text-white pt-10 md:pt-20">
-          
+
           {/* Animated Badge */}
           <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-white/10 rounded-full bg-white/5 backdrop-blur-md shadow-2xl animate-[slide-up-fade_1s_ease-out_forwards] hover:bg-white/10 transition-colors cursor-default group">
             <div className="w-8 h-8 rounded-full bg-sapient-teal/20 flex items-center justify-center border border-sapient-teal/30">
-                <TrendingUp size={14} className="text-sapient-gold" />
+              <TrendingUp size={14} className="text-sapient-gold" />
             </div>
             <span className="text-white text-xs font-bold tracking-[0.25em] uppercase font-sans">
               Trusted Partner in Wealth Creation
@@ -111,9 +111,9 @@ const Hero: React.FC = () => {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light opacity-0 animate-[slide-up-fade_1s_ease-out_0.8s_forwards]">
-             Expert financial guidance tailored to preserve and grow your wealth across generations. Experience the pinnacle of personalized investment strategies.
+            Expert financial guidance tailored to preserve and grow your wealth across generations. Experience the pinnacle of personalized investment strategies.
           </p>
-          
+
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-6 mt-12 opacity-0 animate-[slide-up-fade_1s_ease-out_1s_forwards]">
             <a href="#products" className="bg-sapient-teal text-white px-8 py-4 rounded-full font-semibold tracking-wide hover:bg-sapient-teal-dark transition-all duration-300 shadow-lg shadow-sapient-teal/20 flex items-center gap-2 group border border-transparent hover:border-sapient-gold/20">
@@ -130,7 +130,7 @@ const Hero: React.FC = () => {
         <button
           onClick={() => setIsAppOpen(!isAppOpen)}
           className={`
-            w-12 h-12 rounded-full bg-sapient-teal/90 backdrop-blur-sm
+            w-12 h-12 rounded-full bg-[#FF5E0E]/90 backdrop-blur-sm
             shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-white/20 text-white 
             flex items-center justify-center transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1)
             hover:scale-110 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] relative group overflow-hidden
@@ -141,7 +141,7 @@ const Hero: React.FC = () => {
           {/* Shine Effect */}
           {!isAppOpen && (
             <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent w-3/4 h-full shine-effect"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent w-3/4 h-full shine-effect"></div>
             </div>
           )}
 
@@ -158,16 +158,16 @@ const Hero: React.FC = () => {
         </button>
 
         {/* The Expandable QR Card */}
-        <div 
+        <div
           className={`
             relative origin-bottom-right transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isAppOpen 
-              ? 'opacity-100 scale-100 translate-y-0 translate-x-0 pointer-events-auto' 
+            ${isAppOpen
+              ? 'opacity-100 scale-100 translate-y-0 translate-x-0 pointer-events-auto'
               : 'opacity-0 scale-50 translate-y-10 translate-x-10 pointer-events-none'
             }
           `}
         >
-          <div className="w-80 bg-[#0F172A]/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-6 relative overflow-hidden">
+          <div className="w-80 bg-[#FF5E0E]/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-6 relative overflow-hidden">
             {/* Glossy sheen effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50 pointer-events-none"></div>
 
@@ -178,19 +178,18 @@ const Hero: React.FC = () => {
                 className="w-full h-full object-contain mix-blend-multiply"
               />
             </div>
-            
+
             <div className="text-center relative z-10">
-              <h3 className="text-sapient-gold font-bold text-sm tracking-widest mb-2 uppercase">Download The App</h3>
+              <h3 className="text-white font-bold text-sm tracking-widest mb-2 uppercase">Download The App</h3>
             </div>
           </div>
         </div>
       </div>
 
       {/* Sticky Quote */}
-      <div 
-        className={`hidden md:block absolute bottom-16 right-0 md:right-0 bg-sapient-dark/40 backdrop-blur-md p-10 border-l-2 border-sapient-gold max-w-lg z-30 rounded-l-2xl shadow-2xl transition-all duration-1000 ease-out transform ${
-          isQuoteVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-        }`}
+      <div
+        className={`hidden md:block absolute bottom-16 right-0 md:right-0 bg-sapient-dark/40 backdrop-blur-md p-10 border-l-2 border-sapient-gold max-w-lg z-30 rounded-l-2xl shadow-2xl transition-all duration-1000 ease-out transform ${isQuoteVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}
       >
         <p className="text-gray-200 text-xl font-light leading-relaxed italic font-serif">
           "With D&S Investment, navigate your investment journey with a partner who understands and shapes solutions to fit your unique financial dream."
