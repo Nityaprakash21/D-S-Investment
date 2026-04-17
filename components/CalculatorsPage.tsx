@@ -227,7 +227,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                 className={`relative px-4 sm:px-8 py-3 text-sm font-bold z-10 transition-colors whitespace-nowrap ${activeTab === tab.id ? 'text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}
               >
                 {tab.label}
-                {activeTab === tab.id && <motion.div layoutId="calc-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 mx-4" />}
+                {activeTab === tab.id && <motion.div layoutId="calc-tab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FF5E0E] mx-4" />}
               </button>
             ))}
           </div>
