@@ -60,8 +60,8 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                   key={idx}
                   onClick={() => setActiveTab(idx)}
                   className={`text-left px-6 py-5 text-sm md:text-base transition-all duration-500 border-l-2 ${activeTab === idx
-                    ? 'bg-white/10 backdrop-blur-md text-white border-sapient-gold font-semibold shadow-lg translate-x-4 rounded-r-lg'
-                    : 'border-white/10 text-white/50 hover:bg-white/5 hover:text-white'
+                    ? 'bg-white/10 backdrop-blur-md text-white-400 border-sapient-gold font-semibold shadow-lg translate-x-4 rounded-r-lg'
+                    : 'border-white/10 text-white-400/50 hover:bg-white/5 hover:text-white-400'
                     }`}
                 >
                   {tab.label}
@@ -78,7 +78,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-sapient-dark/90 via-sapient-dark/20 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
-                <h4 className="text-2xl font-serif text-white mb-3">{SERVICE_TABS[activeTab].label}</h4>
+                <h4 className="text-2xl font-serif text-white-400 mb-3">{SERVICE_TABS[activeTab].label}</h4>
                 <p className="text-sm text-gray-300 line-clamp-3 leading-relaxed font-light">
                   {SERVICE_TABS[activeTab].description}
                 </p>
