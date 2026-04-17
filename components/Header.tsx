@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({
     <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
       {/* Background Layer - Separated to prevent fixed positioning context trap for the drawer */}
       <div 
-        className="absolute inset-0 z-0 transition-all duration-500 glass-dark shadow-2xl"
+        className="absolute inset-0 z-0 transition-all duration-500 bg-white shadow-md"
       />
 
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between py-4 md:py-6 relative z-50">
@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({
           aria-label="Go to home"
         >
           <img src="/logo.png" alt="D&S Logo" className="w-14 h-14 md:w-14 md:h-14 object-contain" />
-          <div className="text-white font-bold text-sm md:text-xl tracking-tight drop-shadow-sm leading-none">
+          <div className="text-blue-900 font-bold text-sm md:text-xl tracking-tight drop-shadow-sm leading-none">
             D&S <span className="inline-block">Investment</span>
           </div>
         </button>
@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
                 <button 
                   onClick={() => toggleDropdown(item.label)}
                   className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 focus:outline-none ${
-                    activeDropdown === item.label ? 'text-sapient-gold' : 'text-white/90 hover:text-sapient-gold'
+                    activeDropdown === item.label ? 'text-sapient-gold' : 'text-blue-900 hover:text-sapient-gold'
                   }`}
                   aria-expanded={activeDropdown === item.label}
                 >
@@ -128,13 +128,13 @@ const Header: React.FC<HeaderProps> = ({
                 <a 
                   href={item.href} 
                   onClick={(event) => handleNavClick(event, item.label, item.href)}
-                  className={`text-white/90 hover:text-sapient-gold text-sm font-medium transition-colors duration-300 pb-1 ${
+                  className={`text-blue-900 hover:text-sapient-gold text-sm font-medium transition-colors duration-300 pb-1 ${
                     (item.label === 'Calculators' && activePage === 'calculators') ||
                     (item.label === 'Blog' && activePage === 'blogs') ||
                     (item.label === 'Contact Us' && activePage === 'contact') ||
                     (item.label === 'Services' && activePage === 'home' && activeAnchor === 'services') ||
                     (item.label === 'Products' && activePage === 'home' && (activeAnchor === 'products' || hasProductDetail))
-                      ? 'border-b-2 border-white text-white'
+                      ? 'border-b-2 border-sapient-gold text-sapient-gold'
                       : ''
                   }`}
                 >
@@ -171,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({
             href="https://dsinvest.investwell.app/app/#/login" 
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 border border-white/30 bg-white/5 backdrop-blur-sm text-white px-4 py-1.5 md:px-7 md:py-2.5 rounded-full hover:bg-sapient-gold hover:border-sapient-gold hover:text-white transition-all duration-300 text-xs md:text-sm font-semibold group shadow-lg hover:shadow-sapient-gold/30 whitespace-nowrap"
+            className="flex items-center gap-2 border border-blue-900/30 bg-blue-50/50 backdrop-blur-sm text-blue-900 px-4 py-1.5 md:px-7 md:py-2.5 rounded-full hover:bg-sapient-gold hover:border-sapient-gold hover:text-white transition-all duration-300 text-xs md:text-sm font-semibold group shadow-lg hover:shadow-sapient-gold/30 whitespace-nowrap"
           >
             <User size={14} className="md:w-4 md:h-4" />
             <span>
@@ -183,7 +183,7 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden text-white p-1 hover:text-sapient-gold transition-colors relative z-50"
+            className="md:hidden text-blue-900 p-1 hover:text-sapient-gold transition-colors relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
