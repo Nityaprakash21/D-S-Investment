@@ -56,7 +56,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
         <div className="flex items-center justify-center gap-3 md:gap-4 mt-6 opacity-0 animate-[slide-up-fade_1s_ease-out_forwards]" style={{ animationDelay: '0.8s' }}>
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-r from-transparent to-sapient-gold animate-[expand-line_1s_ease-out_forwards]" style={{ animationDelay: '1.2s' }}></div>
             <p className="text-sapient-gold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase whitespace-nowrap">
-              Driven by Growth. Powered by Trust.
+              Powered by Trust. Driven by Growth
             </p>
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-l from-transparent to-sapient-gold animate-[expand-line_1s_ease-out_forwards]" style={{ animationDelay: '1.2s' }}></div>
         </div>
