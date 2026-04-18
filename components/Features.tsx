@@ -5,13 +5,13 @@ const FEATURES = [
     id: 1,
     title: "Client-Centric Approach",
     description: "Your goals are our compass. We tailor every strategy to fit your unique financial narrative.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000",
+    image: "https://plus.unsplash.com/premium_photo-1723867483907-aa3f8de7121e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
     title: "Expert Financial Planning",
     description: "Decades of combined experience ensuring your portfolio is robust against market shifts.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1776248783518-400b6d0da64c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -21,9 +21,9 @@ const FEATURES = [
   },
   {
     id: 4,
-    title: "Continuous Support",
+    title: "Wealth Transfer",
     description: "A partnership that evolves with you, offering guidance through every life stage.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1565515636369-57f6e9f5fe79?q=80&w=1105&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }
 ];
 
