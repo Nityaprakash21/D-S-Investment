@@ -50,10 +50,12 @@ const ContactPage: React.FC = () => {
             <form className="flex-1 flex flex-col gap-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">First Name</label>
+                  <label htmlFor="firstName" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">First Name</label>
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
                     <input 
+                      id="firstName"
+                      name="firstName"
                       type="text" 
                       placeholder="John" 
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
@@ -61,8 +63,10 @@ const ContactPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Last Name</label>
+                  <label htmlFor="lastName" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Last Name</label>
                   <input 
+                    id="lastName"
+                    name="lastName"
                     type="text" 
                     placeholder="Doe" 
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
@@ -72,10 +76,12 @@ const ContactPage: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Email ID</label>
+                  <label htmlFor="email" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Email ID</label>
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
                     <input 
+                      id="email"
+                      name="email"
                       type="email" 
                       placeholder="john@example.com" 
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
@@ -83,10 +89,12 @@ const ContactPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Phone Number</label>
+                  <label htmlFor="phone" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Phone Number</label>
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
                     <input 
+                      id="phone"
+                      name="phone"
                       type="tel" 
                       placeholder="+91 00000 00000" 
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
@@ -96,8 +104,10 @@ const ContactPage: React.FC = () => {
               </div>
 
               <div className="space-y-2 flex-1 flex flex-col">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Message</label>
+                <label htmlFor="message" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Message</label>
                 <textarea 
+                  id="message"
+                  name="message"
                   placeholder="Tell us how we can help with your investment journey..." 
                   className="w-full flex-1 px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all resize-none min-h-[150px]"
                 />

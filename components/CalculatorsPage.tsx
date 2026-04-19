@@ -273,7 +273,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
               {/* Amount Input */}
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-bold uppercase tracking-wider opacity-80 flex items-center gap-2">
+                  <label htmlFor="amount" className="text-sm font-bold uppercase tracking-wider opacity-80 flex items-center gap-2">
                     {activeTab === 'cagr' ? 'Initial Investment' :
                       goalType === 'invest' ? (activeTab === 'sip' || activeTab === 'topup' ? `Investment Amount (Monthly)` : 'Lumpsum amount') : 'I need to earn'}
                     {activeTab === 'sip' && (
@@ -288,6 +288,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   <div className="flex items-center bg-white/10 rounded-lg border border-white/20 overflow-hidden focus-within:border-white/40 transition-colors">
                     <span className="pl-4 text-white/60 font-bold">₹</span>
                     <input
+                      id="amount"
+                      name="amount"
                       type="text"
                       value={amount.toLocaleString()}
                       onChange={(e) => {
@@ -302,6 +304,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   </div>
                 </div>
                 <input
+                  id="amountRange"
+                  name="amountRange"
                   type="range"
                   min={activeTab === 'sip' ? 500 : 5000}
                   max={activeTab === 'sip' ? 1000000 : 10000000}
@@ -309,6 +313,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   value={amount}
                   onChange={(e) => setAmount(Number(e.target.value))}
                   className="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-white"
+                  aria-labelledby="amount"
                 />
                 <div className="flex justify-between text-[10px] font-black uppercase opacity-60">
                   <span>{activeTab === 'sip' ? '₹500' : '₹5k'}</span>
@@ -334,9 +339,11 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
               {/* Tenure Input */}
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-bold uppercase tracking-wider opacity-80">For a period of</label>
+                  <label htmlFor="tenure" className="text-sm font-bold uppercase tracking-wider opacity-80">For a period of</label>
                   <div className="flex items-center bg-white/10 rounded-lg border border-white/20 overflow-hidden focus-within:border-white/40 transition-colors">
                     <input
+                      id="tenure"
+                      name="tenure"
                       type="number"
                       value={tenure}
                       onChange={(e) => {
@@ -351,6 +358,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   </div>
                 </div>
                 <input
+                  id="tenureRange"
+                  name="tenureRange"
                   type="range"
                   min="1"
                   max="40"
@@ -358,6 +367,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   value={tenure}
                   onChange={(e) => setTenure(Number(e.target.value))}
                   className="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-white"
+                  aria-labelledby="tenure"
                 />
                 <div className="flex justify-between text-[10px] font-black uppercase opacity-60">
                   <span>1 Year</span>
@@ -369,12 +379,14 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
               {(activeTab === 'topup' || activeTab === 'swp' || activeTab === 'stp') && (
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <label className="text-sm font-bold uppercase tracking-wider opacity-80">
+                    <label htmlFor="topUp" className="text-sm font-bold uppercase tracking-wider opacity-80">
                       {activeTab === 'topup' ? 'Annual Top-Up (%)' :
                         activeTab === 'swp' ? 'Monthly Withdrawal' : 'Monthly Transfer'}
                     </label>
                     <div className="flex items-center bg-white/10 rounded-lg border border-white/20 overflow-hidden focus-within:border-white/40 transition-colors">
                       <input
+                        id="topUp"
+                        name="topUp"
                         type="number"
                         value={topUp}
                         onChange={(e) => setTopUp(Number(e.target.value))}
@@ -384,6 +396,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                     </div>
                   </div>
                   <input
+                    id="topUpRange"
+                    name="topUpRange"
                     type="range"
                     min={activeTab === 'topup' ? 1 : 500}
                     max={activeTab === 'topup' ? 25 : 100000}
@@ -391,6 +405,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                     value={topUp}
                     onChange={(e) => setTopUp(Number(e.target.value))}
                     className="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-white"
+                    aria-labelledby="topUp"
                   />
                   <div className="flex justify-between text-[10px] font-black uppercase opacity-60">
                     <span>{activeTab === 'topup' ? '1%' : '₹500'}</span>
@@ -403,10 +418,12 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
               {activeTab === 'cagr' && (
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <label className="text-sm font-bold uppercase tracking-wider opacity-80">Final Value</label>
+                    <label htmlFor="finalValue" className="text-sm font-bold uppercase tracking-wider opacity-80">Final Value</label>
                     <div className="flex items-center bg-white/10 rounded-lg border border-white/20 overflow-hidden focus-within:border-white/40 transition-colors">
                       <span className="pl-4 text-white/60 font-bold">₹</span>
                       <input
+                        id="finalValue"
+                        name="finalValue"
                         type="text"
                         value={finalValue.toLocaleString()}
                         onChange={(e) => setFinalValue(Number(e.target.value.replace(/,/g, '')))}
@@ -415,6 +432,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                     </div>
                   </div>
                   <input
+                    id="finalValueRange"
+                    name="finalValueRange"
                     type="range"
                     min="1000"
                     max="10000000"
@@ -422,6 +441,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                     value={finalValue}
                     onChange={(e) => setFinalValue(Number(e.target.value))}
                     className="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-white"
+                    aria-labelledby="finalValue"
                   />
                   <div className="flex justify-between text-[10px] font-black uppercase opacity-60">
                     <span>₹1k</span>
@@ -433,9 +453,11 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
               {/* Rate Input */}
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-bold uppercase tracking-wider opacity-80">Expected rate of return</label>
+                  <label htmlFor="rate" className="text-sm font-bold uppercase tracking-wider opacity-80">Expected rate of return</label>
                   <div className="flex items-center bg-white/10 rounded-lg border border-white/20 overflow-hidden focus-within:border-white/40 transition-colors">
                     <input
+                      id="rate"
+                      name="rate"
                       type="number"
                       step="0.5"
                       value={rate}
@@ -451,6 +473,8 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   </div>
                 </div>
                 <input
+                  id="rateRange"
+                  name="rateRange"
                   type="range"
                   min="2"
                   max="25"
@@ -458,6 +482,7 @@ const CalculatorsPage: React.FC<CalculatorsPageProps> = ({ initialType = 'sip' }
                   value={rate}
                   onChange={(e) => setRate(Number(e.target.value))}
                   className="w-full h-1.5 bg-white/20 rounded-full appearance-none cursor-pointer accent-white"
+                  aria-labelledby="rate"
                 />
                 <div className="flex justify-between text-[10px] font-black uppercase opacity-60">
                   <span>2%</span>
