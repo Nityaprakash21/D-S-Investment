@@ -21,9 +21,15 @@ const CTA: React.FC = () => {
           Get in touch with us today, and we will help you achieve your investment goals through personalized strategies and expert guidance.
         </p>
         
-        <Link to="/contact" className="bg-sapient-teal text-white px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-sapient-teal/30 hover:shadow-2xl hover:shadow-sapient-teal/40 hover:-translate-y-1 hover:bg-sapient-teal-dark transition-all duration-300 tracking-wide block w-max mx-auto">
+        <button
+          onClick={() => {
+            window.history.pushState(null, '', '/contact');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="bg-sapient-teal text-white px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-sapient-teal/30 hover:shadow-2xl hover:shadow-sapient-teal/40 hover:-translate-y-1 hover:bg-sapient-teal-dark transition-all duration-300 tracking-wide block w-max mx-auto"
+        >
           Submit a Query
-        </Link>
+        </button>
       </div>
     </section>
   );
