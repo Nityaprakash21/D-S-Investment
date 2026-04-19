@@ -17,8 +17,8 @@ const Resources: React.FC<ResourcesProps> = ({ onViewAll }) => {
             <span className="text-sapient-gold font-bold tracking-[0.2em] text-xs uppercase block mb-4">
               Invest In Knowledge
             </span>
-            <h2 className="text-4xl font-serif text-sapient-slate max-w-xl leading-tight">
-              Insights that shape<br/>better decisions.
+            <h2 className="text-4xl font-serif text-sapient-slate max-w-xl leading-tight whitespace-nowrap">
+              Insights that shape better decisions.
             </h2>
           </div>
         </div>
