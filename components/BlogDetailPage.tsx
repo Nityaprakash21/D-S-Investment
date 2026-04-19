@@ -106,7 +106,9 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ blogId, onBack }) => {
             <h3 className="text-2xl font-bold mb-4">Ready to start your {blog.title} journey?</h3>
             <p className="text-slate-400 mb-8 max-w-md mx-auto">Join over 2.5 million investors who trust D&S for their daily wealth management.</p>
             <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-blue-500/25">
-              Open Free Account
+              <a href="https://dsinvest.investwell.app/app/#/login" target="_blank" rel="noopener noreferrer">
+                Open Free Account
+              </a>
             </button>
           </div>
 
