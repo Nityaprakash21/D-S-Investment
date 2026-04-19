@@ -13,16 +13,33 @@ import CTA from './components/CTA';
 import Resources from './components/Resources';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
 import ScrollToTop from './components/ScrollToTop';
+import { GridLoader } from 'react-spinners';
+import { useRef } from 'react';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const loaderRef = useRef<HTMLDivElement>(null);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [selectedBlogId, setSelectedBlogId] = useState<string | null>(null);
   const [activePage, setActivePage] = useState<'home' | 'calculators' | 'blogs' | 'contact'>('home');
   const [activeCalculatorType, setActiveCalculatorType] = useState<string>('sip');
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Simulate loading for 2.5s (or adjust as needed)
+    const timer = setTimeout(() => {
+      if (loaderRef.current) {
+        loaderRef.current.classList.add('opacity-0');
+      }
+      setTimeout(() => {
+        setLoading(false);
+        setShowContent(true);
+      }, 600); // match transition duration
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const syncFromLocation = () => {
@@ -80,16 +97,18 @@ const App: React.FC = () => {
 
       setActivePage('home');
       setSelectedBlogId(null);
-      setActiveAnchor(resolvedAnchor || null);
-
-      if (resolvedAnchor) {
-        setTimeout(() => {
-          const section = document.getElementById(resolvedAnchor);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 0);
-      }
+        // Only scroll to anchor if there is a hash in the URL
+        setActiveAnchor(hash ? hash : null);
+        if (hash) {
+          setTimeout(() => {
+            const section = document.getElementById(hash);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 0);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }
     };
 
     syncFromLocation();
@@ -170,8 +189,17 @@ const App: React.FC = () => {
 
   return (
     <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}
-      <div className={`font-sans antialiased text-gray-800 bg-white min-h-screen flex flex-col`}>
+      {loading && (
+        <div
+          ref={loaderRef}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-700 opacity-100"
+        >
+          <GridLoader color="#FF5E0E" size={24} margin={4} />
+        </div>
+      )}
+      <div
+        className={`font-sans antialiased text-gray-800 bg-white min-h-screen flex flex-col transition-opacity duration-700 ${showContent ? 'opacity-100' : 'opacity-0'}`}
+      >
         <Header onNavigate={handleNavigate} activePage={activePage} activeAnchor={activeAnchor} hasProductDetail={Boolean(selectedProductId)} />
         <main className="flex-grow">
           {activePage === 'calculators' ? (
