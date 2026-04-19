@@ -296,7 +296,9 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
                      Our dedicated financial planning team is ready to help you navigate {content.title} with a personalized strategy.
                    </p>
                    <button className="w-full py-4 bg-white text-slate-900 font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-slate-100 transition-all group/btn">
-                     Consult an Expert <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                    <a href="https://calendly.com/diptibehera-mfa/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      Consult an Expert <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
                    </button>
                 </div>
               </div>
