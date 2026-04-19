@@ -34,92 +34,50 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-sapient-dark">
-      {/* 1. Base Layer with subtle noise texture */}
-      <div className="absolute inset-0 bg-[#0B1120]" />
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none z-0"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-        }}
-      />
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-[#0B1120] py-0 md:py-0">
+      {/* World Map Background (fixed path) */}
+      <div className="absolute inset-0 z-0 bg-no-repeat bg-cover bg-center opacity-60" style={{backgroundImage: "url('/images/world_map.jpg')"}} />
+      {/* Subtle dark overlay for contrast */}
+      <div className="absolute inset-0 z-10 bg-[#0B1120]/80" />
 
-      {/* 2. Parallax Image Layer - High-end Architectural/Abstract feel */}
-      <div
-        ref={parallaxRef}
-        className="absolute inset-0 bg-cover bg-center z-0 opacity-30 mix-blend-overlay will-change-transform"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop")', // High-rise / Abstract architecture
-          transform: 'scale(1.1)', // Initial scale to allow movement
-        }}
-      />
-
-      {/* 3. Gradient Orbs for Depth */}
-      <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-sapient-teal/20 rounded-full blur-[120px] animate-pulse z-0 pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-sapient-gold/10 rounded-full blur-[100px] z-0 pointer-events-none" />
-
-      {/* 4. Sophisticated Gradients for Text Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120] via-[#0B1120]/90 to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-[#0B1120]/50 z-10" />
-
-      {/* 5. Premium Texture: Diamond Mesh (Faded Diagonally from Top-Left) */}
-      <div
-        className="absolute inset-0 z-10 opacity-[0.05] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(45deg, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(-45deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px',
-          maskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
-          WebkitMaskImage: 'linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
-        }}
-      />
-
-      {/* 6. Premium Texture: Financial Graph Grid (Faded Diagonally from Bottom-Right) */}
-      <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `
-               linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
-               linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)
-             `,
-          backgroundSize: '50px 50px',
-          maskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)',
-          WebkitMaskImage: 'linear-gradient(315deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 60%)'
-        }}>
-      </div>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-6 relative z-20 h-full flex items-center">
-        <div className="max-w-4xl text-white pt-10 md:pt-20">
-
-          {/* Animated Badge */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-white/10 rounded-full bg-white/5 backdrop-blur-md shadow-2xl animate-[slide-up-fade_1s_ease-out_forwards] hover:bg-white/10 transition-colors cursor-default group">
-            <div className="w-8 h-8 rounded-full bg-sapient-teal/20 flex items-center justify-center border border-sapient-teal/30">
-              <TrendingUp size={14} className="text-sapient-gold" />
-            </div>
-            <span className="text-white text-xs font-bold tracking-[0.25em] uppercase font-sans">
-              Trusted Partner in Wealth Creation
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium leading-[1.1] mb-8 tracking-tight opacity-0 animate-[slide-up-fade_1s_ease-out_0.3s_forwards]">
-            Navigating the<br />
-            <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-sapient-gray to-gray-400">Unseen Terrain</span>
+      {/* Main Content Grid */}
+      <div className="container mx-auto px-6 relative z-20 flex flex-col md:flex-row items-center justify-center min-h-screen">
+        {/* Left: Headline and Actions */}
+        <div className="flex-1 flex flex-col justify-center items-start max-w-2xl min-h-[500px] md:min-h-[600px] lg:min-h-[700px] py-12 md:py-0">
+          <span className="text-[#FF5E0E] font-bold tracking-[0.2em] text-xs uppercase mb-6">INSTITUTIONAL GRADE EXCELLENCE</span>
+          <h1 className="text-white text-5xl md:text-7xl font-serif font-bold leading-tight mb-4 drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">
+            The Future of <span className="text-[#A3B8FF] italic font-semibold">Sovereign</span><br />Wealth.
           </h1>
-
-          {/* Decorative Line */}
-          <div className="h-0.5 w-32 bg-gradient-to-r from-sapient-gold to-transparent mt-8 mb-10 opacity-0 animate-[expand-line_1s_ease-out_0.6s_forwards]" />
-
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light opacity-0 animate-[slide-up-fade_1s_ease-out_0.8s_forwards]">
-            Expert financial guidance tailored to preserve and grow your wealth across generations. Experience the pinnacle of personalized investment strategies.
+          <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-md drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            With D&S Investment, navigate your investment journey with a partner who understands and shapes solutions to fit your unique financial dream.
           </p>
+          <div className="flex gap-4 mt-6 mb-10">
+            <a href="#" className="bg-gradient-to-r from-[#A3B8FF] to-[#6C8AE4] text-[#0B1120] px-7 py-3 rounded-lg font-semibold shadow-lg hover:shadow-blue-400/40 hover:from-[#C7D6FF] hover:to-[#A3B8FF] transition ring-2 ring-[#A3B8FF]/30 focus:ring-4 focus:ring-[#A3B8FF]/50">Talk to our Expert</a>
+          </div>
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-6 mt-12 opacity-0 animate-[slide-up-fade_1s_ease-out_1s_forwards]">
-            <a href="#products" className="bg-sapient-teal text-white px-8 py-4 rounded-full font-semibold tracking-wide hover:bg-sapient-teal-dark transition-all duration-300 shadow-lg shadow-sapient-teal/20 flex items-center gap-2 group border border-transparent hover:border-sapient-gold/20">
-              Start Your Journey
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+        {/* Right: Card Stack */}
+        <div className="flex-1 flex flex-col gap-6 max-w-md w-full md:mt-0 md:ml-12 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] justify-center">
+          <div className="bg-[#10182A]/90 border-l-4 border-[#A3B8FF] rounded-xl p-6 shadow-2xl flex gap-4 items-start backdrop-blur-md">
+            <span className="text-[#A3B8FF] mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19.5 3 21l1.5-4L16.5 3.5Z"/></svg></span>
+            <div>
+              <div className="font-bold text-white text-lg mb-1">Expert Guidance</div>
+              <div className="text-gray-300 text-sm">Decades of refined experience across major global markets and specialized asset classes.</div>
+            </div>
+          </div>
+          <div className="bg-[#181F32]/95 border-l-4 border-[#FF5E0E] rounded-xl p-6 shadow-2xl flex gap-4 items-start backdrop-blur-md">
+            <span className="text-[#FF5E0E] mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <div>
+              <div className="font-bold text-white text-lg mb-1 italic">Tailored Strategies</div>
+              <div className="text-gray-300 text-sm">Bespoke financial architectures designed around the unique mandates of our clientele.</div>
+            </div>
+          </div>
+          <div className="bg-[#10182A]/90 border-l-4 border-[#A3B8FF] rounded-xl p-6 shadow-2xl flex gap-4 items-start backdrop-blur-md">
+            <span className="text-[#A3B8FF] mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2Z"/></svg></span>
+            <div>
+              <div className="font-bold text-white text-lg mb-1">Global Reach</div>
+              <div className="text-gray-300 text-sm">Unparalleled connectivity to private markets and sovereign investment opportunities.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,11 +88,11 @@ const Hero: React.FC = () => {
         <button
           onClick={() => setIsAppOpen(!isAppOpen)}
           className={`
-            w-12 h-12 rounded-full bg-[#FF5E0E]/90 backdrop-blur-sm
+            w-12 h-12 rounded-full backdrop-blur-sm
             shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-white/20 text-white 
             flex items-center justify-center transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1)
             hover:scale-110 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] relative group overflow-hidden
-            ${isAppOpen ? 'rotate-90 scale-90 bg-sapient-teal-dark' : 'rotate-0 scale-100'}
+            ${isAppOpen ? 'rotate-90 scale-90 bg-[#FF5E0E]' : 'rotate-0 scale-100 bg-[#FF5E0E]/90'}
           `}
           aria-label={isAppOpen ? "Close App Download" : "Open App Download"}
         >
@@ -186,15 +144,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Sticky Quote */}
-      <div
-        className={`hidden md:block absolute bottom-16 right-0 md:right-0 bg-sapient-dark/40 backdrop-blur-md p-10 border-l-2 border-sapient-gold max-w-lg z-30 rounded-l-2xl shadow-2xl transition-all duration-1000 ease-out transform ${isQuoteVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}
-      >
-        <p className="text-gray-200 text-xl font-light leading-relaxed italic font-serif">
-          "With D&S Investment, navigate your investment journey with a partner who understands and shapes solutions to fit your unique financial dream."
-        </p>
-      </div>
     </section>
   );
 };
