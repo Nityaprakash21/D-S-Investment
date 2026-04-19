@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             With D&S Investment, navigate your investment journey with a partner who understands and shapes solutions to fit your unique financial dream.
           </p>
           <div className="flex gap-4 mt-6 mb-10">
-            <a href="#" className="bg-gradient-to-r from-[#A3B8FF] to-[#6C8AE4] text-[#0B1120] px-7 py-3 rounded-lg font-semibold shadow-lg hover:shadow-blue-400/40 hover:from-[#C7D6FF] hover:to-[#A3B8FF] transition ring-2 ring-[#A3B8FF]/30 focus:ring-4 focus:ring-[#A3B8FF]/50">Talk to our Expert</a>
+            <a href="https://calendly.com/diptibehera-mfa/30min" target='_blank' className="bg-gradient-to-r from-[#A3B8FF] to-[#6C8AE4] text-[#0B1120] px-7 py-3 rounded-lg font-semibold shadow-lg hover:shadow-blue-400/40 hover:from-[#C7D6FF] hover:to-[#A3B8FF] transition ring-2 ring-[#A3B8FF]/30 focus:ring-4 focus:ring-[#A3B8FF]/50">Talk to our Expert</a>
           </div>
         </div>
 
