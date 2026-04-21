@@ -3,8 +3,11 @@ import { ChevronDown, ArrowRight, User, Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 interface HeaderProps {
-  onNavigate?: (target: 'home' | 'calculators' | 'blogs' | 'contact', anchorId?: string) => void;
-  activePage?: 'home' | 'calculators' | 'blogs' | 'contact';
+  onNavigate?: (
+    target: 'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer',
+    anchorId?: string
+  ) => void;
+  activePage?: 'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer';
   activeAnchor?: string | null;
   hasProductDetail?: boolean;
 }

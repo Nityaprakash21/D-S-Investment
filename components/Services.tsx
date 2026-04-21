@@ -3,7 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import { SERVICE_TABS } from '../constants';
 
 interface ServicesProps {
-  onNavigate?: (target: 'home' | 'calculators' | 'blogs' | 'contact', anchorId?: string) => void;
+  onNavigate?: (
+    target: 'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer',
+    anchorId?: string
+  ) => void;
 }
 
 const Services: React.FC<ServicesProps> = ({ onNavigate }) => {

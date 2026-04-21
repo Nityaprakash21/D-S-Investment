@@ -1,7 +1,14 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (
+    target: 'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer',
+    anchorId?: string
+  ) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-sapient-dark text-white pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
       
@@ -60,12 +67,26 @@ const Footer: React.FC = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-sapient-gold"></span>
               </h4>
               <ul className="space-y-4 text-gray-400 text-sm font-light">
-                {['Home', 'About Us', 'Services', 'Resources', 'Contact Us'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="group flex items-center hover:text-sapient-gold transition-colors duration-300">
-                       <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 text-sapient-gold">›</span>
-                       <span>{item}</span>
-                    </a>
+                {[
+                  { label: 'Home', target: 'home', anchor: 'hero' },
+                  // { label: 'About Us', target: 'home', anchor: 'why-choose-us' },
+                  { label: 'Services', target: 'home', anchor: 'services' },
+                  { label: 'Products', target: 'home', anchor: 'products' },
+                  { label: 'Contact Us', target: 'contact' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <button
+                      type="button"
+                      className="group flex items-center hover:text-sapient-gold transition-colors duration-300 bg-transparent border-0 p-0 m-0 cursor-pointer"
+                      onClick={() => {
+                        if (onNavigate) {
+                          onNavigate(item.target as any, item.anchor);
+                        }
+                      }}
+                    >
+                      <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 text-sapient-gold">›</span>
+                      <span>{item.label}</span>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -78,12 +99,20 @@ const Footer: React.FC = () => {
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-sapient-gold"></span>
               </h4>
               <ul className="space-y-4 text-gray-400 text-sm font-light">
-                {['Mutual Funds', 'Portfolio Management', 'Risk Management', 'Fixed Deposits', 'Bonds'].map((item) => (
+                {['Mutual Funds & Portfolio Mgnt', 'Individual Taxation', 'ITR Filing', 'Wealth Management'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="group flex items-center hover:text-sapient-gold transition-colors duration-300">
+                    <button
+                      type="button"
+                      className="group flex items-center hover:text-sapient-gold transition-colors duration-300 bg-transparent border-0 p-0 m-0 cursor-pointer"
+                      onClick={() => {
+                        if (onNavigate) {
+                          onNavigate('home', 'services');
+                        }
+                      }}
+                    >
                       <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 text-sapient-gold">›</span>
                       <span>{item}</span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -113,18 +142,36 @@ const Footer: React.FC = () => {
                 <div className="p-2 bg-white/5 rounded-full group-hover:bg-sapient-teal transition-colors">
                     <Mail size={16} className="text-white" />
                 </div>
-                <span>contact@dandsinvestment.com</span>
+                <span>diptibehera.mfa@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500 font-light relative z-10">
-          <p>© 2024 D&S Investment. All rights reserved.</p>
+          <p>© 2026 D&S Investment. All rights reserved.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-sapient-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-sapient-gold transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-sapient-gold transition-colors">Disclaimer</a>
+            <button
+              type="button"
+              className="hover:text-sapient-gold transition-colors bg-transparent border-0 p-0 m-0"
+              onClick={() => onNavigate?.('privacy')}
+            >
+              Privacy Policy
+            </button>
+            <button
+              type="button"
+              className="hover:text-sapient-gold transition-colors bg-transparent border-0 p-0 m-0"
+              onClick={() => onNavigate?.('terms')}
+            >
+              Terms of Service
+            </button>
+            <button
+              type="button"
+              className="hover:text-sapient-gold transition-colors bg-transparent border-0 p-0 m-0"
+              onClick={() => onNavigate?.('disclaimer')}
+            >
+              Disclaimer
+            </button>
           </div>
         </div>
       </div>

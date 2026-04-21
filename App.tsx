@@ -14,6 +14,9 @@ import Resources from './components/Resources';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfServicePage from './components/TermsOfServicePage';
+import DisclaimerPage from './components/DisclaimerPage';
 import { GridLoader } from 'react-spinners';
 import { useRef } from 'react';
 
@@ -23,7 +26,7 @@ const App: React.FC = () => {
   const loaderRef = useRef<HTMLDivElement>(null);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [selectedBlogId, setSelectedBlogId] = useState<string | null>(null);
-  const [activePage, setActivePage] = useState<'home' | 'calculators' | 'blogs' | 'contact'>('home');
+  const [activePage, setActivePage] = useState<'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer'>('home');
   const [activeCalculatorType, setActiveCalculatorType] = useState<string>('sip');
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
 
@@ -92,6 +95,30 @@ const App: React.FC = () => {
         return;
       }
 
+      if (path === '/privacy-policy') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('privacy');
+        setActiveAnchor(null);
+        return;
+      }
+
+      if (path === '/terms-of-service') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('terms');
+        setActiveAnchor(null);
+        return;
+      }
+
+      if (path === '/disclaimer') {
+        setSelectedProductId(null);
+        setSelectedBlogId(null);
+        setActivePage('disclaimer');
+        setActiveAnchor(null);
+        return;
+      }
+
       const homeAnchorFromPath = path !== '/' ? path.replace(/^\/+|\/+$/g, '') : '';
       const resolvedAnchor = hash || homeAnchorFromPath;
 
@@ -129,12 +156,22 @@ const App: React.FC = () => {
   }, [selectedBlogId]);
 
   useEffect(() => {
-    if (activePage === 'calculators' || activePage === 'blogs' || activePage === 'contact') {
+    if (
+      activePage === 'calculators' ||
+      activePage === 'blogs' ||
+      activePage === 'contact' ||
+      activePage === 'privacy' ||
+      activePage === 'terms' ||
+      activePage === 'disclaimer'
+    ) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [activePage]);
 
-  const handleNavigate = (target: 'home' | 'calculators' | 'blogs' | 'contact', anchorId?: string) => {
+  const handleNavigate = (
+    target: 'home' | 'calculators' | 'blogs' | 'contact' | 'privacy' | 'terms' | 'disclaimer',
+    anchorId?: string
+  ) => {
     if (target === 'calculators') {
       setSelectedProductId(null);
       setSelectedBlogId(null);
@@ -165,6 +202,33 @@ const App: React.FC = () => {
       setActivePage('contact');
       setActiveAnchor(null);
       window.history.pushState(null, '', '/contact');
+      return;
+    }
+
+    if (target === 'privacy') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('privacy');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/privacy-policy');
+      return;
+    }
+
+    if (target === 'terms') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('terms');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/terms-of-service');
+      return;
+    }
+
+    if (target === 'disclaimer') {
+      setSelectedProductId(null);
+      setSelectedBlogId(null);
+      setActivePage('disclaimer');
+      setActiveAnchor(null);
+      window.history.pushState(null, '', '/disclaimer');
       return;
     }
 
@@ -215,6 +279,12 @@ const App: React.FC = () => {
             )
           ) : activePage === 'contact' ? (
             <ContactPage />
+          ) : activePage === 'privacy' ? (
+            <PrivacyPolicyPage />
+          ) : activePage === 'terms' ? (
+            <TermsOfServicePage />
+          ) : activePage === 'disclaimer' ? (
+            <DisclaimerPage />
           ) : selectedProductId ? (
             <ProductDetailPage
               productId={selectedProductId}
@@ -233,7 +303,7 @@ const App: React.FC = () => {
           )}
         </main>
         <ScrollToTop />
-        <Footer />
+        <Footer onNavigate={handleNavigate} />
       </div>
     </>
   );
