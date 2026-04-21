@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Toast } from './Toast';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Send, MessageSquare, User, Info, ChevronDown, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageSquare, User, Info, ShieldCheck } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   const [toast, setToast] = useState<null | { type: 'success' | 'error'; message: string }>(null);
