@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({
         className="absolute inset-0 z-0 transition-all duration-500 bg-white shadow-md"
       />
 
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between py-4 md:py-6 relative z-50">
+      <div className="container mx-auto max-w-[1600px] px-4 md:px-8 xl:px-12 flex items-center justify-between py-4 md:py-6 relative z-50">
         {/* Logo */}
         <button
           type="button"
@@ -110,13 +110,13 @@ const Header: React.FC<HeaderProps> = ({
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-12 xl:space-x-16 2xl:space-x-20">
           {NAV_ITEMS.map((item) => (
             <div key={item.label} className="relative group/nav">
               {item.isDropdown ? (
                 <button 
                   onClick={() => toggleDropdown(item.label)}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 focus:outline-none ${
+                  className={`flex items-center gap-2 text-[15px] xl:text-[17px] 2xl:text-[18px] font-medium transition-colors duration-300 focus:outline-none ${
                     activeDropdown === item.label ? 'text-sapient-gold' : 'text-blue-900 hover:text-sapient-gold'
                   }`}
                   aria-expanded={activeDropdown === item.label}
@@ -131,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({
                 <a 
                   href={item.href} 
                   onClick={(event) => handleNavClick(event, item.label, item.href)}
-                  className={`text-blue-900 hover:text-sapient-gold text-sm font-medium transition-colors duration-300 pb-1 ${
+                  className={`text-blue-900 hover:text-sapient-gold text-[15px] xl:text-[17px] 2xl:text-[18px] font-medium transition-colors duration-300 pb-1 ${
                     (item.label === 'Calculators' && activePage === 'calculators') ||
                     (item.label === 'Blog' && activePage === 'blogs') ||
                     (item.label === 'Contact Us' && activePage === 'contact') ||

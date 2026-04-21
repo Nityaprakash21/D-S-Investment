@@ -33,6 +33,17 @@ const Hero: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const syncQrStateWithViewport = () => {
+      setIsAppOpen(window.innerWidth >= 1024);
+    };
+
+    syncQrStateWithViewport();
+    window.addEventListener('resize', syncQrStateWithViewport);
+
+    return () => window.removeEventListener('resize', syncQrStateWithViewport);
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-[#0B1120] pt-20 md:pt-0 py-0 md:py-0">
       {/* World Map Background (fixed path) */}
@@ -125,11 +136,11 @@ const Hero: React.FC = () => {
             }
           `}
         >
-          <div className="w-80 bg-[#FF5E0E]/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-6 relative overflow-hidden">
+          <div className="w-56 bg-[#FF5E0E]/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-4 relative overflow-hidden">
             {/* Glossy sheen effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50 pointer-events-none"></div>
 
-            <div className="bg-white p-4 rounded-2xl mb-5 flex justify-center aspect-square shadow-inner relative z-0">
+            <div className="bg-white p-3 rounded-2xl mb-4 flex justify-center aspect-square shadow-inner relative z-0">
               <img
                 src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrRedirectUrl)}`}
                 alt="Download App QR"
@@ -138,7 +149,7 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="text-center relative z-10">
-              <h3 className="text-white font-bold text-sm tracking-widest mb-2 uppercase">Download The App</h3>
+              <h3 className="text-white font-bold text-[11px] tracking-[0.24em] uppercase">Download The App</h3>
             </div>
           </div>
         </div>
