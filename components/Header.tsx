@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({
               {item.isDropdown ? (
                 <button 
                   onClick={() => toggleDropdown(item.label)}
-                  className={`flex items-center gap-2 text-[15px] xl:text-[17px] 2xl:text-[18px] font-medium transition-colors duration-300 focus:outline-none ${
+                  className={`flex items-center gap-1.5 text-[15px] xl:text-[15px] 2xl:text-[15px] font-medium transition-colors duration-300 focus:outline-none ${
                     activeDropdown === item.label ? 'text-sapient-gold' : 'text-blue-900 hover:text-sapient-gold'
                   }`}
                   aria-expanded={activeDropdown === item.label}
