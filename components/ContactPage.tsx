@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { Toast } from './Toast';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, MessageSquare, User, Info, ChevronDown, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
+  const [toast, setToast] = useState<null | { type: 'success' | 'error'; message: string }>(null);
   return (
     <div className="relative pt-32 pb-24 overflow-hidden bg-[#f8fafc]">
       {/* Background Decor */}
@@ -47,28 +49,47 @@ const ContactPage: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="lg:col-span-7 bg-white rounded-[40px] p-8 md:p-12 shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col h-full"
           >
-            <form className="flex-1 flex flex-col gap-6">
+            <form
+              className="flex-1 flex flex-col gap-6"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const data = new FormData(form);
+                try {
+                  await fetch('https://docs.google.com/forms/d/e/1FAIpQLSeaol5bxEqHVgIl9A2la6vR4JdVZufogSJkUNkkDji4FjNo0A/formResponse', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: data,
+                  });
+                  setToast({ type: 'success', message: 'Message sent successfully!' });
+                  form.reset();
+                } catch {
+                  setToast({ type: 'error', message: 'Failed to send message. Please try again.' });
+                }
+              }}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="firstName" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">First Name</label>
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
-                    <input 
+                    <input
                       id="firstName"
-                      name="firstName"
-                      type="text" 
-                      placeholder="John" 
+                      name="entry.1115036891"
+                      type="text"
+                      placeholder="John"
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
+                      required
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="lastName" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Last Name</label>
-                  <input 
+                  <input
                     id="lastName"
-                    name="lastName"
-                    type="text" 
-                    placeholder="Doe" 
+                    name="entry.254473594"
+                    type="text"
+                    placeholder="Doe"
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
                   />
                 </div>
@@ -79,12 +100,13 @@ const ContactPage: React.FC = () => {
                   <label htmlFor="email" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Email ID</label>
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
-                    <input 
+                    <input
                       id="email"
-                      name="email"
-                      type="email" 
-                      placeholder="john@example.com" 
+                      name="entry.735692859"
+                      type="email"
+                      placeholder="john@example.com"
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
+                      required
                     />
                   </div>
                 </div>
@@ -92,11 +114,11 @@ const ContactPage: React.FC = () => {
                   <label htmlFor="phone" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Phone Number</label>
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
-                    <input 
+                    <input
                       id="phone"
-                      name="phone"
-                      type="tel" 
-                      placeholder="+91 00000 00000" 
+                      name="entry.1746513790"
+                      type="tel"
+                      placeholder="+91 00000 00000"
                       className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all"
                     />
                   </div>
@@ -105,21 +127,28 @@ const ContactPage: React.FC = () => {
 
               <div className="space-y-2 flex-1 flex flex-col">
                 <label htmlFor="message" className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Message</label>
-                <textarea 
+                <textarea
                   id="message"
-                  name="message"
-                  placeholder="Tell us how we can help with your investment journey..." 
+                  name="entry.1239229590"
+                  placeholder="Tell us how we can help with your investment journey..."
                   className="w-full flex-1 px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all resize-none min-h-[150px]"
                 />
               </div>
 
-              <button 
+              <button
                 type="submit"
                 className="w-full py-5 bg-blue-600 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:bg-blue-700 transition-all flex items-center justify-center gap-3 group active:scale-95"
               >
                 Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
+            {toast && (
+              <Toast
+                message={toast.message}
+                type={toast.type}
+                onClose={() => setToast(null)}
+              />
+            )}
             
             {/* Subtle bottom detail */}
             <div className="mt-8 pt-6 border-t border-slate-50 flex items-center gap-4 text-slate-400">
