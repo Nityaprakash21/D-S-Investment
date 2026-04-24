@@ -36,8 +36,8 @@ const Features: React.FC = () => {
             Why Choose Us
           </span>
           <h2 className="text-4xl md:text-6xl font-serif text-sapient-slate leading-tight">
-            Driven by Growth.<br />
-            <span className="text-sapient-teal">Powered by Trust.</span>
+            Powered by Trust.<br />
+            <span className="text-sapient-teal">Driven by Growth.</span>
           </h2>
         </div>
 

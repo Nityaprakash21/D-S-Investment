@@ -36,7 +36,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
               Our Key Services
             </span>
             <h2 className="text-5xl md:text-6xl font-serif font-medium mb-10 leading-tight">
-              Financial Freedom,<br />
+              Financial Freedom<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-sapient-gray">Our Responsibility</span>
             </h2>
             <p className="text-gray-200 text-lg leading-relaxed mb-10 font-light">

@@ -99,7 +99,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-sapient-gold"></span>
               </h4>
               <ul className="space-y-4 text-gray-400 text-sm font-light">
-                {['Mutual Funds & Portfolio Mgnt', 'Individual Taxation', 'ITR Filing', 'Wealth Management'].map((item) => (
+                {['Investment Solutions', 'Individual Taxation', 'ITR Filing', 'Wealth Management'].map((item) => (
                   <li key={item}>
                     <button
                       type="button"
