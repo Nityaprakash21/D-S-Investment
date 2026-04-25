@@ -6,29 +6,25 @@ const PRIVACY_SECTIONS = [
   {
     title: 'Information you share with us',
     points: [
-      'We may collect your name, email address, phone number, city, and any details you submit through contact or enquiry forms.',
-      'If you request investment support, we may also retain details needed to understand your goals and respond appropriately.',
+      'We may collect personal details including name, contact information, identification records, financial details, beneficiary information, and correspondence you voluntarily provide.',
     ],
   },
   {
     title: 'Information collected automatically',
     points: [
-      'Basic technical information such as browser type, device type, pages visited, and approximate usage patterns may be collected to improve website performance.',
-      'This data is generally used in an operational manner and not to build intrusive personal profiles.',
+      'Basic technical and non-personal usage information such as browser type, session duration, visited pages, and interaction patterns may be collected through analytics tools.',
     ],
   },
   {
     title: 'How information is used',
     points: [
-      'We use the information to respond to enquiries, schedule discussions, improve service quality, and maintain reasonable business records.',
-      'Where relevant to your interaction with us, we may also share important service updates or follow-up communication.',
+      'Your information is used to manage accounts, deliver services, process transactions, communicate updates, improve offerings, and comply with legal obligations.',
     ],
   },
   {
     title: 'Data protection and access',
     points: [
-      'We take reasonable administrative and technical measures to protect data from unauthorized use, access, or disclosure.',
-      'You may contact us to request correction of information you have shared or to limit non-essential communication.',
+      'We implement technical, administrative, and physical safeguards to protect your information and allow updates or corrections upon request.',
     ],
   },
 ];
@@ -72,15 +68,15 @@ const PrivacyPolicyPage: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-3xl bg-white/5 border border-white/10 p-5">
                   <Database className="text-blue-300 mb-4" size={20} />
-                  <p className="text-sm text-slate-200 leading-relaxed">Contact and enquiry details may be collected to respond meaningfully.</p>
+                  <p className="text-sm text-slate-200 leading-relaxed">Contact and financial details may be collected when voluntarily submitted through our website or service channels.</p>
                 </div>
                 <div className="rounded-3xl bg-white/5 border border-white/10 p-5">
                   <Lock className="text-blue-300 mb-4" size={20} />
-                  <p className="text-sm text-slate-200 leading-relaxed">Reasonable safeguards are used to reduce the risk of misuse or unauthorized access.</p>
+                  <p className="text-sm text-slate-200 leading-relaxed">Reasonable safeguards are applied to protect your information from misuse, unauthorised access, or disclosure.</p>
                 </div>
                 <div className="rounded-3xl bg-white/5 border border-white/10 p-5 sm:col-span-2">
                   <Mail className="text-blue-300 mb-4" size={20} />
-                  <p className="text-sm text-slate-200 leading-relaxed">You may contact us if you want information updated, corrected, or communications limited.</p>
+                  <p className="text-sm text-slate-200 leading-relaxed">You may contact us to request correction of your information or raise concerns regarding data handling practices.</p>
                 </div>
               </div>
             </div>

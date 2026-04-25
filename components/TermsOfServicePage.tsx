@@ -6,30 +6,32 @@ const TERMS_CARDS = [
   {
     icon: <FileText size={20} className="text-blue-600" />,
     title: 'Website content',
-    text: 'All content is provided for general informational use and may be updated, revised, or removed without prior notice.',
+    text: 'All information, materials, and resources on this website are provided for general informational purposes and may be updated or modified without notice.',
   },
   {
     icon: <Globe size={20} className="text-blue-600" />,
     title: 'Permitted use',
-    text: 'You may browse and interact with the website lawfully, but may not misuse forms, disrupt access, or interfere with operation.',
+    text: 'You may access and use this website only for lawful personal or professional purposes in accordance with these terms.',
   },
   {
     icon: <BadgeCheck size={20} className="text-blue-600" />,
     title: 'Ownership',
-    text: 'The website design, branding, text, and supporting materials remain protected and may not be reused without permission.',
+    text: 'All website content, branding, software, graphics, and materials remain the exclusive intellectual property of D&S Investment.',
   },
   {
     icon: <Gavel size={20} className="text-blue-600" />,
     title: 'Changes to service',
-    text: 'We may modify website features, content, availability, or supporting information at our discretion.',
+    text: 'We reserve the right to modify website features, services, terms, or content at any time without prior notice.',
   },
 ];
 
 const TERMS_ROWS = [
-  ['Acceptance', 'By using this website, you agree to these terms and to use the website only for lawful and appropriate purposes.'],
-  ['No automatic client relationship', 'Viewing calculators, product information, blog content, or service descriptions does not by itself establish an advisory or client engagement.'],
-  ['User responsibility', 'You remain responsible for how you rely on website information and for ensuring your conduct on the website respects law and the rights of others.'],
-  ['Third-party material', 'Any outside links, downloads, or connected services are offered for convenience and remain subject to their own terms and policies.'],
+  ['Acceptance', 'By accessing or using this website, you agree to be bound by these Terms and Conditions of Use. Continued use after updates constitutes acceptance of revised terms.'],
+  ['User responsibility', 'You are responsible for ensuring all information provided to D&S Investment is accurate, complete, and current, and for complying with all applicable laws while using this platform.'],
+  ['Account Security', 'You are solely responsible for maintaining the confidentiality of your login credentials and must notify D&S Investment immediately of any unauthorised access or security breach.'],
+  ['Confidentiality', 'Any confidential information shared through this platform or in connection with our services must not be disclosed without prior written consent.'],
+  ['Disclaimer', 'This website content is provided “as is” without warranty of any kind, either express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement. D&S Investment does not warrant that the website will be uninterrupted or error-free.'],
+  ['Grievance Officer', 'Ms. Surekha Tanty | Email: diptibehera.mfa@gmail.com | Phone: +91 9861204284 | Address: E-49, Koel Nagar, Rourkela-769014, Dist-Sundargarh, Odisha']
 ];
 
 const TermsOfServicePage: React.FC = () => {
@@ -54,8 +56,7 @@ const TermsOfServicePage: React.FC = () => {
             Terms for using the <span className="text-blue-600">D&amp;S Investment website.</span>
           </h1>
           <p className="text-slate-500 text-lg md:text-xl leading-relaxed">
-            These terms explain the basic conditions for accessing the website, reading our informational material,
-            and interacting with its features in a responsible manner.
+            These terms govern your access to the website, use of our services, and your responsibilities while interacting with D&S Investment online.
           </p>
         </motion.div>
 
