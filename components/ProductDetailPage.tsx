@@ -21,6 +21,7 @@ import {
   Clock,
   Shield
 } from 'lucide-react';
+import Riskometer from './Riskometer';
 
 interface ProductDetailPageProps {
   productId: string;
@@ -46,14 +47,14 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
       'mutual-funds': {
         title: "Mutual Funds Marketplace",
         icon: <Layers size={48} />,
-        desc: "Invest in professionally managed portfolios. Choose from thousands of direct and regular mutual fund schemes across equity, debt, and hybrid categories.",
+        desc: "Invest in professionally managed portfolios spanning thousands of mutual fund schemes across equity, debt, hybrid, ETFs, and overseas funds — carefully selected to match your goals, risk appetite, and investment horizon.",
         points: [
-          "Start a SIP with as little as ₹500 per month",
-          "Expert-curated 'Star Portfolios' for various goals",
-          "Zero commission on Direct Plans for higher returns",
-          "Automated portfolio rebalancing and goal tracking"
+          "Expert Management — Brilliant minds working for your money, around the clock",
+          "Diversification — Never put all your eggs in one basket — and never have to",
+          "Liquidity — Your money, available when you need it most.",
+          "Regulated & Safe — Invested with confidence. Protected by design."
         ],
-        risk: "Moderate to High",
+        risk: "Risk Levels (SEBI)",
         horizon: "3 - 10 Years"
       },
       'nps': {
@@ -230,24 +231,72 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-400">
-                  <Shield size={20} />
+              {productId === 'mutual-funds' ? (
+                <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border-2 border-blue-200 shadow-lg col-span-1 md:col-span-2 w-full md:w-[600px] lg:w-[650px] xl:w-[700px] mx-auto">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-blue-500 border border-blue-200">
+                      <Shield size={20} />
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 uppercase">{content.risk}</div>
+                    </div>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full w-full text-xs md:text-sm text-left border-collapse rounded-xl overflow-hidden">
+                      <thead>
+                        <tr className="bg-blue-100 text-blue-700">
+                          <th className="px-4 py-2 font-bold">Level</th>
+                          <th className="px-4 py-2 font-bold">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white">
+                        <tr className="border-b border-blue-100">
+                          <td className="px-4 py-2">Low</td>
+                          <td className="px-4 py-2">Principal at low risk</td>
+                        </tr>
+                        <tr className="border-b border-blue-100">
+                          <td className="px-4 py-2">Moderately Low</td>
+                          <td className="px-4 py-2">Principal at moderately low risk</td>
+                        </tr>
+                        <tr className="border-b border-blue-100">
+                          <td className="px-4 py-2">Moderate</td>
+                          <td className="px-4 py-2">Principal at moderate risk</td>
+                        </tr>
+                        <tr className="border-b border-blue-100">
+                          <td className="px-4 py-2">Moderately High</td>
+                          <td className="px-4 py-2">Principal at moderately high risk</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-2">High</td>
+                          <td className="px-4 py-2">Principal at high risk</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Risk Level</div>
-                  <div className="font-bold text-slate-900">{content.risk}</div>
+              ) : (
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-400">
+                    <Shield size={20} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Risk Level</div>
+                    <div className="font-bold text-slate-900">{content.risk}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-400">
-                  <Clock size={20} />
+              )}
+              {/* Only show Horizon if not mutual-funds */}
+              {productId !== 'mutual-funds' && (
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-400">
+                    <Clock size={20} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Horizon</div>
+                    <div className="font-bold text-slate-900">{content.horizon}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Horizon</div>
-                  <div className="font-bold text-slate-900">{content.horizon}</div>
-                </div>
-              </div>
+              )}
             </div>
 
             <h3 className="text-2xl font-bold text-slate-900 mb-8">Key Benefits & Features</h3>
@@ -283,6 +332,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
             className="lg:col-span-4"
           >
             <div className="sticky top-32 space-y-8">
+
               <div className="p-8 bg-slate-900 rounded-[40px] text-white overflow-hidden relative group">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 blur-3xl rounded-full" />
                 <div className="relative z-10">
@@ -302,6 +352,11 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
                    </button>
                 </div>
               </div>
+
+              {/* Riskometer only for mutual funds */}
+              {productId === 'mutual-funds' && (
+                <Riskometer />
+              )}
 
               <div className="p-8 bg-white rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50">
                 <h4 className="font-bold text-slate-900 mb-6">Quick Faqs</h4>

@@ -12,27 +12,27 @@ export const SERVICE_TABS = [
   { 
     label: "Mutual Funds Distribution", 
     image: "/images/mfd.jpg.jpeg",
-    description: "Empowering investors with seamless mutual fund distribution"
+    description: "Mutual fund investing, made simple, personal, and purposeful. Because every investor deserves clarity, not confusion."
   },
   { 
     label: "Portfolio Management", 
     image: "/images/pm.jpg.jpeg",
-    description: "Delivering personalized portfolio management solutions"
+    description: "Disciplined management. Deeply personal outcomes. Your wealth, structured with precision and handled with heart."
   },
   { 
-    label: "Individual Taxation", 
-    image: "/images/it.jpg.jpeg",
-    description: "Providing expert individual taxation services"
+    label: "Insurance Solutions", 
+    image: "/images/it.jpg.png",
+    description: "The right cover, for the life you've built and the future you're planning because the people who depend on you deserve certainty."
   },
   { 
     label: "ITR Filing", 
     image: "/images/itrf.jpg.jpeg",
-    description: "Making ITR filing simple and stress-free"
+    description: "We handle your ITR filing end-to-end. So you stay compliant without the stress"
   },
   { 
-    label: "Wealth Management", 
+    label: "Retirement Planning", 
     image: "/images/wm.jpg.jpeg",
-    description: "Delivering comprehensive wealth management solutions"
+    description: "We help you build a personalized retirement strategy designed to provide steady, reliable income well beyond your final working day"
   }
 ];
 

@@ -16,13 +16,13 @@ const FEATURES = [
   {
     id: 3,
     title: "Data-Driven Insights",
-    description: "Leveraging advanced analytics to uncover opportunities that others might miss.",
+    description: "We do the rigorous analysis, so you never miss the right opportunity.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 4,
     title: "Wealth Transfer",
-    description: "A partnership that evolves with you, offering guidance through every life stage.",
+    description: "From building to passing on — we walk every step of your journey with you.",
     image: "https://images.unsplash.com/photo-1565515636369-57f6e9f5fe79?q=80&w=1105&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }
 ];

@@ -55,12 +55,12 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 relative z-20 flex flex-col md:flex-row items-center justify-center min-h-screen">
         {/* Left: Headline and Actions */}
         <div className="flex-1 flex flex-col justify-center items-start max-w-2xl min-h-[500px] md:min-h-[600px] lg:min-h-[700px] py-12 md:py-0">
-          <span className="text-[#FF5E0E] font-bold tracking-[0.2em] text-xs uppercase mb-10 md:mb-6">INSTITUTIONAL GRADE EXCELLENCE</span>
+          <span className="text-[#FF5E0E] font-bold tracking-[0.2em] text-xs uppercase mb-10 md:mb-6">INSTITUTIONAL GRADE WEALTH MANAGEMENT</span>
           <h1 className="text-white text-5xl md:text-7xl font-serif font-bold leading-tight mb-4 drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">
-            The Future of <span className="text-[#A3B8FF] italic font-semibold">Sovereign</span><br />Wealth.
+            Wealth that works for<br /><span className="text-[#A3B8FF] italic font-semibold">Generations.</span>
           </h1>
           <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-md drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
-            With D&S Investment, navigate your investment journey with a partner who understands and shapes solutions to fit your unique financial dream.
+            With D&S Investment, navigate your investment journey with a partner who shapes wealth that works for generations, not just quarters.
           </p>
           <div className="flex gap-4 mt-6 mb-5 md:mb-5">
             <a href="https://calendly.com/diptibehera-mfa/30min" target='_blank' className="bg-gradient-to-r from-[#A3B8FF] to-[#6C8AE4] text-[#0B1120] px-7 py-3 rounded-lg font-semibold shadow-lg hover:shadow-blue-400/40 hover:from-[#C7D6FF] hover:to-[#A3B8FF] transition ring-2 ring-[#A3B8FF]/30 focus:ring-4 focus:ring-[#A3B8FF]/50">Talk to our Expert</a>
@@ -79,15 +79,15 @@ const Hero: React.FC = () => {
           <div className="bg-[#181F32]/95 border-l-4 border-[#FF5E0E] rounded-xl p-6 shadow-2xl flex gap-4 items-start backdrop-blur-md">
             <span className="text-[#FF5E0E] mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
             <div>
-              <div className="font-bold text-white text-lg mb-1 italic">Tailored Strategies</div>
+              <div className="font-bold text-white text-lg mb-1">Tailored Strategies</div>
               <div className="text-gray-300 text-sm">Bespoke financial architectures designed around the unique mandates of our clientele.</div>
             </div>
           </div>
           <div className="bg-[#10182A]/90 border-l-4 border-[#A3B8FF] rounded-xl p-6 shadow-2xl flex gap-4 items-start backdrop-blur-md">
             <span className="text-[#A3B8FF] mt-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2Z"/></svg></span>
             <div>
-              <div className="font-bold text-white text-lg mb-1">Global Reach</div>
-              <div className="text-gray-300 text-sm">Unparalleled connectivity to private markets and sovereign investment opportunities.</div>
+              <div className="font-bold text-white text-lg mb-1">Expanded Opportunity</div>
+              <div className="text-gray-300 text-sm">Broader access to private markets and differentiated investment opportunities.</div>
             </div>
           </div>
         </div>
