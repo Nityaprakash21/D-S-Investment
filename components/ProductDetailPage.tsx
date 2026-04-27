@@ -246,7 +246,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
                       <thead>
                         <tr className="bg-blue-100 text-blue-700">
                           <th className="px-4 py-2 font-bold">Level</th>
-                          <th className="px-4 py-2 font-bold">Description</th>
+                          <th className="px-4 py-2 font-bold">Suitable for</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white">
