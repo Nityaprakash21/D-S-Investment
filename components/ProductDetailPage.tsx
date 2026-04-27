@@ -54,7 +54,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
           "Liquidity — Your money, available when you need it most.",
           "Regulated & Safe — Invested with confidence. Protected by design."
         ],
-        risk: "Risk Levels (SEBI)",
+        risk: "Risk Levels (AMFI)",
         horizon: "3 - 10 Years"
       },
       'nps': {
