@@ -315,14 +315,14 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-slate-100">
+            {/* <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-slate-100">
               <button className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl shadow-xl shadow-blue-600/20 hover:bg-blue-700 transition-all active:scale-95 text-center">
                 Start Investing Now
               </button>
               <button className="px-10 py-5 bg-white border border-slate-200 text-slate-600 font-bold rounded-2xl hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 Download Brochure
               </button>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
