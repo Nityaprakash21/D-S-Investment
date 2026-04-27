@@ -1,22 +1,22 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ArrowLeft, 
-  CheckCircle2, 
-  Info, 
-  ArrowRight, 
-  TrendingUp, 
-  Layers, 
-  ShieldCheck, 
-  Landmark, 
-  Gem, 
-  ShieldAlert, 
-  Banknote, 
-  HandCoins, 
-  Briefcase, 
-  Plane, 
-  PieChart, 
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Info,
+  ArrowRight,
+  TrendingUp,
+  Layers,
+  ShieldCheck,
+  Landmark,
+  Gem,
+  ShieldAlert,
+  Banknote,
+  HandCoins,
+  Briefcase,
+  Plane,
+  PieChart,
   Globe,
   Clock,
   Shield
@@ -197,7 +197,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.button 
+        <motion.button
           onClick={onBack}
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
@@ -207,7 +207,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         </motion.button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="lg:col-span-8"
@@ -302,11 +302,11 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
             <h3 className="text-2xl font-bold text-slate-900 mb-8">Key Benefits & Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
               {content.points.map((point: string, i: number) => (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  key={i} 
+                  key={i}
                   className="flex items-start gap-4 p-5 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors bg-white group"
                 >
                   <CheckCircle2 className="text-blue-600 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
@@ -314,18 +314,9 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
                 </motion.div>
               ))}
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-slate-100">
-              <button className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl shadow-xl shadow-blue-600/20 hover:bg-blue-700 transition-all active:scale-95 text-center">
-                Start Investing Now
-              </button>
-              <button className="px-10 py-5 bg-white border border-slate-200 text-slate-600 font-bold rounded-2xl hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-                Download Brochure
-              </button>
-            </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
@@ -336,20 +327,20 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
               <div className="p-8 bg-slate-900 rounded-[40px] text-white overflow-hidden relative group">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 blur-3xl rounded-full" />
                 <div className="relative z-10">
-                   <div className="flex items-center gap-3 mb-6">
-                     <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg">
-                        <Info size={24} />
-                     </div>
-                     <span className="text-lg font-bold">Expert Advisory</span>
-                   </div>
-                   <p className="text-slate-400 mb-8 leading-relaxed">
-                     Our dedicated financial planning team is ready to help you navigate {content.title} with a personalized strategy.
-                   </p>
-                   <button className="w-full py-4 bg-white text-slate-900 font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-slate-100 transition-all group/btn">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg">
+                      <Info size={24} />
+                    </div>
+                    <span className="text-lg font-bold">Expert Advisory</span>
+                  </div>
+                  <p className="text-slate-400 mb-8 leading-relaxed">
+                    Our dedicated financial planning team is ready to help you navigate {content.title} with a personalized strategy.
+                  </p>
+                  <button className="w-full py-4 bg-white text-slate-900 font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-slate-100 transition-all group/btn">
                     <a href="https://calendly.com/diptibehera-mfa/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       Consult an Expert <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                     </a>
-                   </button>
+                  </button>
                 </div>
               </div>
 

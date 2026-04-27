@@ -13,12 +13,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleExpertClick = () => {
-    if (onNavigate) {
-      onNavigate('contact');
-      return;
-    }
-
-    window.location.href = '/contact';
+    window.open('https://calendly.com/diptibehera-mfa/30min', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -32,7 +27,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
 
           {/* Left Content */}
           <div className="lg:w-5/12">
-            <span className="text-white font-bold tracking-[0.2em] text-xs uppercase block mb-6">
+            <span className="text-orange-400 font-bold tracking-[0.2em] text-xs uppercase block mb-6">
               Our Key Services
             </span>
             <h2 className="text-5xl md:text-6xl font-serif font-medium mb-10 leading-tight">
