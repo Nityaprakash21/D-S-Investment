@@ -43,10 +43,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <TrendingUp size={48} />,
         desc: "Access the heart of the Indian stock market. Our advanced trading platform provides low-latency execution and deep technical analysis tools for stocks, F&O, and currencies.",
         points: [
-          "Electronic securities storage - All investments are held digitally, reducing paperwork, theft risk, and handling issues.",
-          "Seamless market access - Enables quick buying and selling of shares, mutual funds, IPOs, ETFs, and derivatives through integrated platforms.",
-          "Secure and regulated system - Operates under SEBI guidelines with depositories (NSDL/CDSL) ensuring high-level investor protection.",
-          "Real-time portfolio tracking - Investors can monitor holdings, market value, and transaction history instantly through apps or web platforms."
+          "<strong>Electronic securities storage</strong> - All investments are held digitally, reducing paperwork, theft risk, and handling issues.",
+          "<strong>Seamless market access</strong> - Enables quick buying and selling of shares, mutual funds, IPOs, ETFs, and derivatives through integrated platforms.",
+          "<strong>Secure and regulated system</strong> - Operates under SEBI guidelines with depositories (NSDL/CDSL) ensuring high-level investor protection.",
+          "<strong>Real-time portfolio tracking</strong> - Investors can monitor holdings, market value, and transaction history instantly through apps or web platforms."
         ],
         risk: "High",
         horizon: "Daily to Long-term",
@@ -78,10 +78,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Layers size={48} />,
         desc: "Invest in professionally managed portfolios spanning thousands of mutual fund schemes across equity, debt, hybrid, ETFs, and overseas funds — carefully selected to match your goals, risk appetite, and investment horizon.",
         points: [
-          "Professional Fund Management – Your investments are managed by experienced fund managers",
-          "Start Small, Grow Gradually – Begin investing with as little as Rs 500 through SIP’s",
-          "Diversified Portfolio – Your money is spread across different investments, helping reduce risk.",
-          "Flexible & Easy Access – Invest, track, and redeem investments conveniently as per your financial needs."
+          "<strong>Professional Fund Management</strong> – Your investments are managed by experienced fund managers",
+          "<strong>Start Small, Grow Gradually</strong> – Begin investing with as little as Rs 500 through SIP’s",
+          "<strong>Diversified Portfolio</strong> – Your money is spread across different investments, helping reduce risk.",
+          "<strong>Flexible & Easy Access</strong> – Invest, track, and redeem investments conveniently as per your financial needs."
         ],
         risk: "Risk Levels (AMFI)",
         horizon: "3 - 10 Years",
@@ -113,10 +113,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <ShieldCheck size={48} />,
         desc: "Secure your retirement with the government-backed pension scheme. Benefit from market-linked returns while building a disciplined retirement corpus.",
         points: [
-          "Market-Linked Returns – Investments are managed across equity, corporate bonds, and government securities for long-term wealth creation.",
-          "Tax Benefits – Enjoy attractive tax deductions under Sections 80C and 80CCD of the Income Tax Act.",
-          "Flexible Investment Choice – Choose your preferred pension fund manager and asset allocation option.",
-          "Retirement Security – Helps create a regular pension income after retirement through annuity plans"
+          "<strong>Market-Linked Returns</strong> – Investments are managed across equity, corporate bonds, and government securities for long-term wealth creation.",
+          "<strong>Tax Benefits</strong> – Enjoy attractive tax deductions under Sections 80C and 80CCD of the Income Tax Act.",
+          "<strong>Flexible Investment Choice</strong> – Choose your preferred pension fund manager and asset allocation option.",
+          "<strong>Retirement Security</strong> – Helps create a regular pension income after retirement through annuity plans"
         ],
         risk: "Low to Moderate",
         horizon: "Retirement",
@@ -148,10 +148,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Landmark size={48} />,
         desc: "Invest in 7.75% (approx) floating rate bonds backed by the RBI. A perfect alternative to traditional FDs with sovereign safety and regular interest payouts.",
         points: [
-          "Government Backed Security – Fully backed by the Government of India, offering high safety for investors.",
-          "Floating Interest Rate – Interest rates are periodically revised in line with NSC rates.",
-          "Regular Income Option – Interest is paid semi-annually, making it suitable for steady income needs.",
-          "7-Year Tenure – Fixed maturity period with premature withdrawal permitted only for eligible senior citizens under specified conditions."
+          "<strong>Government Backed Security</strong> – Fully backed by the Government of India, offering high safety for investors.",
+          "<strong>Floating Interest Rate</strong> – Interest rates are periodically revised in line with NSC rates.",
+          "<strong>Regular Income Option</strong> – Interest is paid semi-annually, making it suitable for steady income needs.",
+          "<strong>7-Year Tenure</strong> – Fixed maturity period with premature withdrawal permitted only for eligible senior citizens under specified conditions."
         ],
         risk: "Very Low",
         horizon: "7 Years",
@@ -183,10 +183,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Gem size={48} />,
         desc: "Invest in the next unicorns before they hit the public exchanges. Access high-growth companies in the private market that are traditionally reserved for HNI investors.",
         points: [
-          "High Growth Potential – Opportunity to invest in emerging companies before they get listed on stock exchanges.",
-          "Diversification Benefit – Adds exposure to private market investments beyond traditional listed equities.",
-          "Limited Liquidity – Shares are traded privately, making buying and selling less liquid compared to listed stocks.",
-          "Early Investment Opportunity – Investors can participate in a company’s growth at an early stage before a potential IPO."
+          "<strong>High Growth Potential</strong> – Opportunity to invest in emerging companies before they get listed on stock exchanges.",
+          "<strong>Diversification Benefit</strong> – Adds exposure to private market investments beyond traditional listed equities.",
+          "<strong>Limited Liquidity</strong> – Shares are traded privately, making buying and selling less liquid compared to listed stocks.",
+          "<strong>Early Investment Opportunity</strong> – Investors can participate in a company’s growth at an early stage before a potential IPO."
         ],
         risk: "Very High",
         horizon: "2 - 5 Years",
@@ -218,10 +218,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <ShieldAlert size={48} />,
         desc: "Protect what matters most. We offer curated Life, Health, and General insurance plans from India's leading providers to safeguard your family's future.",
         points: [
-          "Financial Protection – Provides coverage against unexpected financial losses and emergencies.",
-          "Customizable Plans – Offers flexible coverage options to suit personal and business requirements.",
-          "Risk Management – Helps individuals and businesses manage financial risks effectively.",
-          "Long-Term Security – Supports future financial planning through protection and savings benefits."
+          "<strong>Financial Protection</strong> – Provides coverage against unexpected financial losses and emergencies.",
+          "<strong>Customizable Plans</strong> – Offers flexible coverage options to suit personal and business requirements.",
+          "<strong>Risk Management</strong> – Helps individuals and businesses manage financial risks effectively.",
+          "<strong>Long-Term Security</strong> – Supports future financial planning through protection and savings benefits."
         ],
         risk: "Medium to High",
         horizon: "Lifetime",
@@ -253,10 +253,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Banknote size={48} />,
         desc: "Save your hard-earned tax after selling real estate. Invest in REC, PFC, or NHAI bonds to claim exemptions on long-term capital gains tax.",
         points: [
-          "Capital Gains Tax Exemption – Helps save tax on long-term capital gains under Section 54EC.",
-          "Government-Backed Issuers – Issued by government-supported financial institutions for added safety.",
-          "Fixed Interest Income – Offers stable and predictable interest earnings during the tenure.",
-          "5-Year Lock-In Period – Designed as a long-term tax-saving investment option."
+          "<strong>Capital Gains Tax Exemption</strong> – Helps save tax on long-term capital gains under Section 54EC.",
+          "<strong>Government-Backed Issuers</strong> – Issued by government-supported financial institutions for added safety.",
+          "<strong>Fixed Interest Income</strong> – Offers stable and predictable interest earnings during the tenure.",
+          "<strong>5-Year Lock-In Period</strong> – Designed as a long-term tax-saving investment option."
         ],
         risk: "Very Low",
         horizon: "5 Years (Lock-in)",
@@ -288,10 +288,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <HandCoins size={48} />,
         desc: "Get better interest rates than bank savings. We offer Fixed Deposits from highly-rated NBFCs and Non-Convertible Debentures (NCDs) for consistent returns.",
         points: [
-          "Stable Returns - Offers fixed and predictable income over the investment tenure.",
-          "Flexible Investment Tenure - Available across short-term and long-term maturity options.",
-          "Regular Income Option - Suitable for investors seeking periodic interest payouts.",
-          "Diversified Fixed-Income Choice - Combines the stability of FDs with the potentially higher returns of NCDs."
+          "<strong>Stable Returns</strong> - Offers fixed and predictable income over the investment tenure.",
+          "<strong>Flexible Investment Tenure</strong> - Available across short-term and long-term maturity options.",
+          "<strong>Regular Income Option</strong> - Suitable for investors seeking periodic interest payouts.",
+          "<strong>Diversified Fixed-Income Choice</strong> - Combines the stability of FDs with the potentially higher returns of NCDs."
         ],
         risk: "Low",
         horizon: "1 - 5 Years",
@@ -323,10 +323,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Briefcase size={48} />,
         desc: "Unlock liquidity without selling your investments. Get instant credit against your stocks, mutual funds, or insurance policies at competitive interest rates.",
         points: [
-          "Quick Liquidity - Provides fast access to funds without selling your investments.",
-          "Lower Interest Rates - Generally offers lower interest rates compared to unsecured loans.",
-          "Flexible Usage - Funds can be used for personal or business needs without restrictions.",
-          "Continued Investment Ownership - You remain the owner and continue to benefit from market appreciation and dividends."
+          "<strong>Quick Liquidity</strong> - Provides fast access to funds without selling your investments.",
+          "<strong>Lower Interest Rates</strong> - Generally offers lower interest rates compared to unsecured loans.",
+          "<strong>Flexible Usage</strong> - Funds can be used for personal or business needs without restrictions.",
+          "<strong>Continued Investment Ownership</strong> - You remain the owner and continue to benefit from market appreciation and dividends."
         ],
         risk: "Market Linked",
         horizon: "Flexible",
@@ -358,10 +358,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Plane size={48} />,
         desc: "Explore the world with a safety net. Our global travel plans cover everything from medical emergencies to trip cancellations and lost documents.",
         points: [
-          "Medical Emergency Coverage - Covers hospitalization, doctor visits, emergency treatment, and sometimes medical evacuation during your trip.",
-          "Trip Cancellation & Interruption Protection - Reimburses non-refundable costs if your trip is canceled or cut short due to illness, emergencies, or unforeseen events.",
-          "Baggage & Personal Belongings Protection - Compensates for lost, stolen, or delayed luggage and essential items during travel.",
-          "24/7 Global Assistance Support - Provides round-the-clock help for emergencies like hospital referrals, lost passport assistance, or emergency travel arrangements."
+          "<strong>Medical Emergency Coverage</strong> - Covers hospitalization, doctor visits, emergency treatment, and sometimes medical evacuation during your trip.",
+          "<strong>Trip Cancellation & Interruption Protection</strong> - Reimburses non-refundable costs if your trip is canceled or cut short due to illness, emergencies, or unforeseen events.",
+          "<strong>Baggage & Personal Belongings Protection</strong> - Compensates for lost, stolen, or delayed luggage and essential items during travel.",
+          "<strong>24/7 Global Assistance Support</strong> - Provides round-the-clock help for emergencies like hospital referrals, lost passport assistance, or emergency travel arrangements."
         ],
         risk: "N/A (Protection)",
         horizon: "Per Trip",
@@ -393,10 +393,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <PieChart size={48} />,
         desc: "Exclusive wealth management for high-net-worth individuals. Our AIF and PMS services provide concentrated, high-conviction portfolios managed by expert fund managers.",
         points: [
-          "Professional management - Expert fund and portfolio handling.",
-          "High entry ticket - Requires large minimum investment.",
-          "Custom strategies - PMS is personalized, while AIF follows a pooled strategy.",
-          "Diversified options - Access to private equity, equity, debt, and alternative assets."
+          "<strong>Professional management</strong> - Expert fund and portfolio handling.",
+          "<strong>High entry ticket</strong> - Requires large minimum investment.",
+          "<strong>Custom strategies</strong> - PMS is personalized, while AIF follows a pooled strategy.",
+          "<strong>Diversified options</strong> - Access to private equity, equity, debt, and alternative assets."
         ],
         risk: "High",
         horizon: "3 - 7 Years",
@@ -428,10 +428,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
         icon: <Globe size={48} />,
         desc: "Invest in the future of India. Access various small savings schemes like PPF, SSY, and SCSS that offer safe, tax-efficient, and guaranteed returns.",
         points: [
-          "Public welfare focus - Designed to support citizens' needs.",
-          "Financial assistance - Provides subsidies, loans, or direct benefits.",
-          "Wide coverage - Targets education, health, employment, and more.",
-          "Easy access - Available through online portals and local offices."
+          "<strong>Public welfare focus</strong> - Designed to support citizens' needs.",
+          "<strong>Financial assistance</strong> - Provides subsidies, loans, or direct benefits.",
+          "<strong>Wide coverage</strong> - Targets education, health, employment, and more.",
+          "<strong>Easy access</strong> - Available through online portals and local offices."
         ],
         risk: "None",
         horizon: "5 - 15 Years",
@@ -559,7 +559,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ productId, onBack
                   className="flex items-start gap-4 p-5 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors bg-white group"
                 >
                   <CheckCircle2 className="text-blue-600 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
-                  <span className="text-slate-700 font-medium leading-relaxed">{point}</span>
+                  <span
+                    className="text-slate-700 font-medium leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: point }}
+                  />
                 </motion.div>
               ))}
             </div>
