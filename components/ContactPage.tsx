@@ -211,7 +211,7 @@ const ContactPage: React.FC = () => {
                     <p className="text-xs font-black text-blue-400 uppercase tracking-widest mb-2">AMFI Distributor</p>
                     <p className="text-lg text-slate-300 leading-tight font-medium">
                       <strong className="text-white text-xl">Soumya Sagarika Sahoo:</strong> ARN-176548 <br />
-                      <span className="text-sm text-slate-500 mt-2 block font-normal">GST no. 21FBPPS7971H</span>
+                      <span className="text-sm text-slate-500 mt-2 block font-normal">GST no. 21FBBPS7971H1ZD</span>
                     </p>
                   </div>
                 </div>
