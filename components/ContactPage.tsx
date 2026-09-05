@@ -181,16 +181,21 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Visit Headquarters Card */}
-            <div className="bg-white rounded-[32px] p-6 border border-slate-100 shadow-xl shadow-slate-200/40 flex items-center gap-6 group hover:border-blue-500/30 transition-all">
+            <a 
+              href="https://www.google.com/maps/place/22%C2%B015'27.6%22N+84%C2%B053'09.1%22E/@22.257667,84.885863,17z/data=!3m1!4b1!4m4!3m3!8m2!3d22.257667!4d84.885863!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-[32px] p-6 border border-slate-100 shadow-xl shadow-slate-200/40 flex items-center gap-6 group hover:border-blue-500/30 transition-all block"
+            >
               <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all">
                 <MapPin size={24} />
               </div>
               <div>
                 <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Visit Headquarters</h4>
-                <p className="text-xl font-bold text-slate-900">E-49, Koel Nagar</p>
+                <p className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">E-49, Koel Nagar</p>
                 <p className="text-xs text-slate-500 mt-1 font-medium">Rourkela – 769014, Odisha, India</p>
               </div>
-            </div>
+            </a>
 
             {/* Regulatory Card (Dark) */}
             <div className="bg-slate-900 rounded-[40px] p-10 text-white relative overflow-hidden group shadow-2xl shadow-slate-900/20 flex-1">
