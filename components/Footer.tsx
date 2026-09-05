@@ -130,7 +130,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="p-2 bg-white/5 rounded-full group-hover:bg-sapient-teal transition-colors">
                     <MapPin size={16} className="text-white" />
                 </div>
-                <span>E-49, Koel Nagar,<br />Rourkela, Odisha - 769014</span>
+                <a 
+                  href="https://www.google.com/maps/place/22%C2%B015'27.6%22N+84%C2%B053'09.1%22E/@22.257667,84.885863,17z/data=!3m1!4b1!4m4!3m3!8m2!3d22.257667!4d84.885863!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-sapient-gold transition-colors"
+                >
+                  E-49, Koel Nagar,<br />Rourkela, Odisha - 769014
+                </a>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="p-2 bg-white/5 rounded-full group-hover:bg-sapient-teal transition-colors">
