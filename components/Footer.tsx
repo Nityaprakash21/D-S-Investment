@@ -136,13 +136,17 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="p-2 bg-white/5 rounded-full group-hover:bg-sapient-teal transition-colors">
                     <Phone size={16} className="text-white" />
                 </div>
-                <span>+91 9861204284 / 0661-3590276</span>
+                <span>
+                  <a href="tel:+919861204284" className="hover:underline hover:text-sapient-gold transition-colors">+91 9861204284</a>
+                  {' / '}
+                  <a href="tel:06613590276" className="hover:underline hover:text-sapient-gold transition-colors">0661-3590276</a>
+                </span>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="p-2 bg-white/5 rounded-full group-hover:bg-sapient-teal transition-colors">
                     <Mail size={16} className="text-white" />
                 </div>
-                <span>diptibehera.mfa@gmail.com</span>
+                <a href="mailto:diptibehera.mfa@gmail.com" className="hover:underline hover:text-sapient-gold transition-colors">diptibehera.mfa@gmail.com</a>
               </li>
             </ul>
           </div>
