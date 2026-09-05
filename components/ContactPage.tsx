@@ -171,7 +171,11 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Call Us</h4>
-                <p className="text-xl font-bold text-slate-900">+91 9861204284 / 0661-3590276</p>
+                <p className="text-xl font-bold text-slate-900">
+                  <a href="tel:+919861204284" className="hover:underline hover:text-blue-600 transition-colors">+91 9861204284</a>
+                  {' / '}
+                  <a href="tel:06613590276" className="hover:underline hover:text-blue-600 transition-colors">0661-3590276</a>
+                </p>
                 <p className="text-xs text-slate-500 mt-1 font-medium">Mon – Sat | 10:00 AM – 6:00 PM IST</p>
               </div>
             </div>
