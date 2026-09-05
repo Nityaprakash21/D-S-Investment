@@ -246,7 +246,7 @@ const Header: React.FC<HeaderProps> = ({
             <p className="text-blue-900 text-xs mb-4 uppercase tracking-widest">Get in Touch</p>
             <div className="text-blue-900 text-sm space-y-2 font-light">
               <p>+91 9861204284 / 0661-3590276</p>
-              <p>contact@dsinvest.com</p>
+              <p>diptibehera.mfa@gmail.com</p>
             </div>
           </div>
         </div>
