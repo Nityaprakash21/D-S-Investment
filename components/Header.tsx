@@ -245,8 +245,14 @@ const Header: React.FC<HeaderProps> = ({
           <div className="pt-4 pb-12">
             <p className="text-blue-900 text-xs mb-4 uppercase tracking-widest">Get in Touch</p>
             <div className="text-blue-900 text-sm space-y-2 font-light">
-              <p>+91 9861204284 / 0661-3590276</p>
-              <p>diptibehera.mfa@gmail.com</p>
+              <p>
+                <a href="tel:+919861204284" className="hover:underline hover:text-sapient-gold transition-colors">+91 9861204284</a>
+                {' / '}
+                <a href="tel:06613590276" className="hover:underline hover:text-sapient-gold transition-colors">0661-3590276</a>
+              </p>
+              <p>
+                <a href="mailto:diptibehera.mfa@gmail.com" className="hover:underline hover:text-sapient-gold transition-colors">diptibehera.mfa@gmail.com</a>
+              </p>
             </div>
           </div>
         </div>
