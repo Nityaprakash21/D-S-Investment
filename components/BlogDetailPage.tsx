@@ -28,19 +28,19 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ blogId, onBack }) => {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://dsinvestments.in/"
+                  "item": "https://www.dsinvest.in/"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Articles",
-                  "item": "https://dsinvestments.in/#blogs"
+                  "item": "https://www.dsinvest.in/#blogs"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": blog.title,
-                  "item": `https://dsinvestments.in/#blog-${blog.id}`
+                  "item": `https://www.dsinvest.in/#blog-${blog.id}`
                 }
               ]
             })
