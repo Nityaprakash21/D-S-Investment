@@ -71,7 +71,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
             <div className="w-full md:w-7/12 relative h-[500px] md:h-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
               <img
                 src={SERVICE_TABS[activeTab].image}
-                alt="Service Representation"
+                alt={`${SERVICE_TABS[activeTab].label} - D&S Investment Services`}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-sapient-dark/90 via-sapient-dark/20 to-transparent" />
