@@ -17,6 +17,44 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ blogId, onBack }) => {
   return (
     <div className="pt-32 pb-24 bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://dsinvestments.in/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Articles",
+                  "item": "https://dsinvestments.in/#blogs"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": blog.title,
+                  "item": `https://dsinvestments.in/#blog-${blog.id}`
+                }
+              ]
+            })
+          }}
+        />
+
+        <div className="flex items-center gap-2 text-xs text-slate-400 font-medium mb-8">
+          <button onClick={onBack} className="hover:text-blue-600 transition-colors">Home</button>
+          <span>/</span>
+          <button onClick={onBack} className="hover:text-blue-600 transition-colors">Articles</button>
+          <span>/</span>
+          <span className="text-slate-700 truncate max-w-xs">{blog.title}</span>
+        </div>
+
         <motion.button 
           onClick={onBack}
           initial={{ opacity: 0, x: -10 }}
@@ -113,9 +151,25 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ blogId, onBack }) => {
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Risk Management & Safety</h2>
-          <p>
+          <p className="mb-12">
             While {blog.title} offers significant upside, we always recommend reviewing your risk profile. Our platform provides automated risk scores to help you stay within your comfort zone while chasing those ₹Rupee dreams.
           </p>
+
+          {/* Author Bio Section (E-E-A-T) */}
+          <div className="mt-16 p-8 bg-slate-50 border border-slate-200/80 rounded-3xl flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-black text-xl flex items-center justify-center shrink-0 shadow-md">
+              {blog.author.split(' ').map(n => n[0]).join('')}
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <h4 className="text-lg font-extrabold text-slate-900">{blog.author}</h4>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 font-bold">Certified Wealth Advisor</span>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                {blog.author} is a seasoned financial planner and research analyst at D&S Investment with extensive experience in mutual funds, asset allocation, and tax optimization strategies for Indian retail and HNI investors.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
