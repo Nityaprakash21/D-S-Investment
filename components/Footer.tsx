@@ -50,8 +50,20 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Your trusted partner in financial growth. We provide comprehensive wealth management solutions tailored to your unique needs.
             </p>
             <div className="flex gap-4 pt-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="bg-white/5 p-3 rounded-full hover:bg-sapient-gold hover:text-white text-gray-400 transition-all duration-300 hover:-translate-y-1">
+              {[
+                { Icon: Facebook, href: 'https://www.facebook.com/DSINVESTMENTROURKELA?rdid=HyChTuxugcCPoyRh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19b2PAvypB%2F', label: 'Facebook' },
+                { Icon: Twitter, href: '#', label: 'Twitter' },
+                { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+                { Icon: Instagram, href: 'https://www.instagram.com/ds_investments', label: 'Instagram' },
+              ].map(({ Icon, href, label }, i) => (
+                <a 
+                  key={i} 
+                  href={href} 
+                  target={href !== '#' ? '_blank' : undefined}
+                  rel={href !== '#' ? 'noopener noreferrer' : undefined}
+                  aria-label={label}
+                  className="bg-white/5 p-3 rounded-full hover:bg-sapient-gold hover:text-white text-gray-400 transition-all duration-300 hover:-translate-y-1"
+                >
                   <Icon size={18} />
                 </a>
               ))}
