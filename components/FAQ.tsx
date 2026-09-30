@@ -13,6 +13,23 @@ const FAQ: React.FC = () => {
     <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12 md:mb-20">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": FAQS.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
           <h2 className="text-3xl md:text-5xl font-serif text-sapient-slate mb-4 md:mb-6">
             Common Questions
           </h2>
